@@ -3,7 +3,7 @@
 
 </br>
 ## **概述**
-uexBeeCloud 封装了支付宝（ALI\_APP），微信（WX\_APP），银联（UN\_APP）三个主流渠道的支付接口。  
+[uexBeeCloud](http://plugin.appcan.cn/details.html?id=481_index) 封装了支付宝（ALI\_APP），微信（WX\_APP），银联（UN\_APP）三个主流渠道的支付接口。  
 使用此模块可轻松实现各个渠道的支付功能。
 使用之前需要先到[BeeCloud](https://beecloud.cn) 注册认证，并[快速开始](https://beecloud.cn/apply)接入BeeCloud Pay.
 
