@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FB81317C-2790-4973-BC60-23DE41A3232E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BCPaySDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</key>
+		<string>https://git.coding.net/ewenlong0204/iOSNewPay.git</string>
+		<key>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</key>
+		<string>https://git.coding.net/ewenlong0204/AppCan.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BCPaySDK.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</key>
+		<string>../../../iOSNewPay</string>
+		<key>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://git.coding.net/ewenlong0204/AppCan.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AppCan</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOSNewPay</string>
+		</dict>
+	</array>
+</dict>
+</plist>
