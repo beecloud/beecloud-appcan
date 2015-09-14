@@ -16,9 +16,7 @@
 
 @interface BCPaySDK ()<WXApiDelegate, UPPayPluginDelegate>
 
-@property (nonatomic, assign) BOOL registerStatus;
 @property (nonatomic, weak) id<BCApiDelegate> deleagte;
-@property (nonatomic, strong) UIViewController *upController;
 
 @end
 
@@ -29,9 +27,6 @@
     static BCPaySDK *instance = nil;
     dispatch_once(&onceToken, ^{
         instance = [[BCPaySDK alloc] init];
-        instance.registerStatus = NO;
-
-        instance.upController = [[UIViewController alloc] init];
     });
     return instance;
 }
@@ -44,10 +39,7 @@
 }
 
 + (BOOL)initWeChatPay:(NSString *)wxAppID {
-    BCPaySDK *instance = [BCPaySDK sharedInstance];
-    [BCPayCache sharedInstance].wxAppID = wxAppID;
-    instance.registerStatus =  [WXApi registerApp:wxAppID];
-    return instance.registerStatus;
+    return [WXApi registerApp:wxAppID];
 }
 
 + (void)setBCApiDelegate:(id<BCApiDelegate>)delegate {
