@@ -10,43 +10,31 @@
 	<string>BCPaySDK</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</key>
-		<string>https://git.coding.net/ewenlong0204/iOSNewPay.git</string>
-		<key>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</key>
-		<string>https://git.coding.net/ewenlong0204/AppCan.git</string>
+		<key>6458C1E41F43F19A868B2DDE1970B5326F0FABB7</key>
+		<string>https://github.com/beecloud/beecloud-appcan.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>BCPaySDK.xcodeproj</string>
+	<string>iOS/BCPaySDK.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</key>
-		<string>../../../iOSNewPay</string>
-		<key>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</key>
-		<string>../..</string>
+		<key>6458C1E41F43F19A868B2DDE1970B5326F0FABB7</key>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://git.coding.net/ewenlong0204/AppCan.git</string>
+	<string>https://github.com/beecloud/beecloud-appcan.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</string>
+	<string>6458C1E41F43F19A868B2DDE1970B5326F0FABB7</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>4FFB95F700691DDD0C24CF21DFB1ED6ACF8486ED</string>
+			<string>6458C1E41F43F19A868B2DDE1970B5326F0FABB7</string>
 			<key>IDESourceControlWCCName</key>
-			<string>AppCan</string>
-		</dict>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>049F4656E3DFBC203F30AF5E52BBAB7EAD15476E</string>
-			<key>IDESourceControlWCCName</key>
-			<string>iOSNewPay</string>
+			<string>beecloud-appcan</string>
 		</dict>
 	</array>
 </dict>

@@ -9,9 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "EUExBase.h"
 
-@class BCBaseReq;
-@class BCBaseResp;
-
 @interface EUExBeeCloud : EUExBase
 //
 ///**

@@ -29,10 +29,10 @@
             [BCPaySDK setBCApiDelegate:self];
             
             NSString *appId = [params objectForKey:@"bcAppId"];
-            NSString *appSecret = [params objectForKey:@"bcAppSecret"];
+//            NSString *appSecret = [params objectForKey:@"bcAppSecret"];
             NSString *wxAppID = [params objectForKey:@"wxAppId"];
             
-            [BCPaySDK initWithAppID:appId andAppSecret:appSecret];
+            [BCPaySDK initWithAppID:appId andAppSecret:@""];
             [BCPaySDK initWeChatPay:wxAppID];
         }
     }
