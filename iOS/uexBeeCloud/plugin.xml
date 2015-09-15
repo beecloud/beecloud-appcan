@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<uexplugins>
-    <plugin name="uexBeeCloud">
-        <method name="initBeeCloud"></method>
-        <method name="pay"></method>
-        <method name="getApiVersion"></method>
-	</plugin>
-</uexplugins>
