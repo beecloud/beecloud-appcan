@@ -33,7 +33,7 @@ iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud
 </dict>
 ```
 配置描述:  
-> 如果使用微信，请配置微信开放平台APPID。使用其他渠道，可以自定义参数。
+> 如果使用微信，请配置微信开放平台APPID。使用其他渠道，可以自定义填写。
 
 </br>
 </br>
@@ -59,7 +59,6 @@ iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud
     //init
     var bcData = {
         bcAppId: "c5d1cba1-5e3f-4ba0-941d-9b0a371fe719",
-        bcAppSecret: "39a7a518-9ac8-4a9e-87bc-7885f33cf18c",
         wxAppId: "wxf1aa465362b4c8f1"
     }
     uexBeeCloud.initBeeCloud(JSON.stringify(bcData));
