@@ -33,7 +33,8 @@ iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud
 </dict>
 ```
 配置描述:  
-> 如果使用微信，请配置微信开放平台APPID。使用其他渠道，可以自定义填写。
+> 如果需要使用微信支付，必须配置URL Scheme为微信开放平台APPID;
+> 如果不需要使用微信支付，，可以自定义填写。
 
 </br>
 </br>
@@ -76,7 +77,7 @@ function pay() {
         title: "appcan",
        billno: "2015082418050048",
      totalfee: 1,
-       scheme: 'wxf1aa465362b4c8f1',//支付宝需要，填写在uexBeeCloud.plist中配置的aliPay_UrlScheme
+       scheme: '自定义的URL Scheme',
      optional: {'userID':'张三','mobile':'0512-86861620'} //用于商户扩展业务参数
     };
     uexBeeCloud.pay(JSON.stringify(payData));
