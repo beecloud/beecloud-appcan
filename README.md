@@ -33,7 +33,7 @@ iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud
 </dict>
 ```
 配置描述:  
-> 如果需要使用微信支付，必须配置URL Scheme为微信开放平台APPID;
+> 如果需要使用微信支付，必须配置URL Scheme为微信开放平台APPID;  
 > 如果不需要使用微信支付，，可以自定义填写。
 
 </br>
