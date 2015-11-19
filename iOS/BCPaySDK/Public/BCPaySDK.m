@@ -31,7 +31,7 @@
     return instance;
 }
 
-+ (void)initWithAppID:(NSString *)appId andAppSecret:(NSString *)appSecret {
++ (void)initWithAppID:(NSString *)appId {
     BCPayCache *instance = [BCPayCache sharedInstance];
     instance.appId = appId;
     [BCPaySDK sharedInstance];

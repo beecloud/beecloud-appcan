@@ -31,7 +31,7 @@
             NSString *appId = [params stringValueForKey:@"bcAppId" defaultValue:@""];
             NSString *wxAppID = [params stringValueForKey:@"wxAppId" defaultValue:@""];
             
-            [BCPaySDK initWithAppID:appId andAppSecret:@""];
+            [BCPaySDK initWithAppID:appId];
             [BCPaySDK initWeChatPay:wxAppID];
         }
     }
