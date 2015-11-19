@@ -10,6 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "BCPayCache.h"
 
+
 @implementation BCPayUtil
 
 + (AFHTTPRequestOperationManager *)getAFHTTPRequestOperationManager {
@@ -32,7 +33,7 @@
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
    // NSNumber *timeStamp = [NSNumber numberWithLongLong:[BCPayUtil dateToMillisecond:[NSDate date]]];
    // NSString *appSign = [BCPayUtil getAppSignature:[NSString stringWithFormat:@"%@",timeStamp]];
-    if([BCPayUtil isValidString:[BCPayCache sharedInstance].appId]) {
+    if([BCPayCache sharedInstance].appId.isValid) {
         [parameters setObject:[BCPayCache sharedInstance].appId forKey:@"app_id"];
    //     [parameters setObject:timeStamp forKey:@"timestamp"];
     //    [parameters setObject:appSign forKey:@"app_sign"];
@@ -45,7 +46,7 @@
     NSString *appid = [BCPayCache sharedInstance].appId;
     NSString *appsecret = [BCPayCache sharedInstance].appSecret;
     
-    if (![BCPayUtil isValidString:appid] || ![BCPayUtil isValidString:appsecret])
+    if (!appid.isValid || !appsecret.isValid)
         return nil;
     
     NSString *input = [appid stringByAppendingString:timeStamp];
@@ -62,6 +63,7 @@
 
 + (NSString *)getBestHostWithFormat:(NSString *)format {
     NSString *verHost = [NSString stringWithFormat:@"%@%@",kBCHosts[arc4random()%kBCHostCount],reqApiVersion]; //2015.07.28
+    verHost = @"http://182.92.3.98:8080/1";
     return [NSString stringWithFormat:format, verHost];
 }
 
@@ -163,7 +165,7 @@
 }
 
 + (BOOL)isValidTraceNo:(NSString *)str {
-    if (![BCPayUtil isValidString:str]) return NO;
+    if (!str.isValid) return NO;
     for (NSUInteger i = 0; i < str.length; i++) {
         unichar ch = [str characterAtIndex:i];
         // Invalid character.
@@ -172,26 +174,8 @@
     return YES;
 }
 
-+ (BOOL)isValidString:(NSString *)str {
-    if (str == nil || (NSNull *)str == [NSNull null] || str.length == 0 ) return NO;
-    return YES;
-}
-
-+ (BOOL)isPureInt:(NSString *)str {
-    NSScanner *scan = [NSScanner scannerWithString:str];
-    int val;
-    return [scan scanInt:&val] && [scan isAtEnd];
-}
-
-
-+ (BOOL)isPureFloat:(NSString *)str {
-    NSScanner *scan = [NSScanner scannerWithString:str];
-    float val;
-    return [scan scanFloat:&val] && [scan isAtEnd];
-}
-
 + (NSUInteger)getBytes:(NSString *)str {
-    if (![BCPayUtil isValidString:str]) {
+    if (!str.isValid) {
         return 0;
     } else {
         NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);

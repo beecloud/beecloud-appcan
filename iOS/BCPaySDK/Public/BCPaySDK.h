@@ -12,7 +12,7 @@
 @class BCBaseReq;
 @class BCBaseResp;
 
-@protocol BCApiDelegate <NSObject>
+@protocol BeeCloudDelegate <NSObject>
 @required
 /**
  *  不同类型的请求，对应不同的响应
@@ -20,6 +20,13 @@
  *  @param resp 响应体
  */
 - (void)onBCPayResp:(id)resp;
+@optional
+/**
+ *  百度钱包
+ *
+ *  @param url 百度移动网页URL
+ */
+- (void)onBCPayBaidu:(NSString *)url;
 
 @end
 
@@ -57,7 +64,7 @@
  *
  *  @param delegate BCApiDelegate对象，用来接收BeeCloud触发的消息。
  */
-+ (void)setBCApiDelegate:(id<BCApiDelegate>)delegate;
++ (void)setBeeCloudDelegate:(id<BeeCloudDelegate>)delegate;
 
 /**
  *  获取API版本号
@@ -79,15 +86,6 @@
  *  @param time 超时时间, 5.0代表5秒。
  */
 + (void)setNetworkTimeout:(NSTimeInterval)time;
-
-/**
- *  Channel Type
- *
- *  @param channel channel String
- *
- *  @return channelType
- */
-+ (PayChannel)getChannelType:(NSString *)channel;
 
 #pragma mark - Send BeeCloud Request
 

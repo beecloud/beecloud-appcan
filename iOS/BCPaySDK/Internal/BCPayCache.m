@@ -23,8 +23,6 @@
         instance.wxAppID = nil;
         instance.networkTimeout = 5.0;
         instance.willPrintLogMsg = NO;
-        
-        
     });
     return instance;
 }

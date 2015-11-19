@@ -13,9 +13,9 @@
 
 **此插件需要用户自定义使用**  
 iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud`插件包里的 uexBeeCloud.plist 文件的`CFBundleURLSchemes`值。
->使用微信支付，请同时勾选插件uexWeixin。
+> 使用微信支付，请同时勾选AppCan官网公共插件里**uexWeixin**。
 
-配置示例:
+示例配置代码如下:
 
 ```js
 <dict>
@@ -34,7 +34,7 @@ iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud
 ```
 配置描述:  
 > 如果需要使用微信支付，必须配置URL Scheme为微信开放平台APPID;  
-> 如果不需要使用微信支付，，可以自定义填写。
+> 如果不需要使用微信支付，可以自定义填写。
 
 </br>
 </br>
