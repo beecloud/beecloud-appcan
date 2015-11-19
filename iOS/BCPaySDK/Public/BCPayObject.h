@@ -8,58 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-/**
- *  BCPay URL type for handling URLs.
- */
-typedef NS_ENUM(NSInteger, BCPayUrlType) {
-    /**
-     *  Unknown type.
-     */
-    BCPayUrlUnknown,
-    /**
-     *  WeChat pay.
-     */
-    BCPayUrlWeChat,
-    /**
-     *  Alipay.
-     */
-    BCPayUrlAlipay
-};
-
-typedef NS_ENUM(NSInteger, PayChannel) {
-    None = 0,
-    WX,
-    Ali,
-    Union
-};
-
-enum  BCErrCode {
-    BCSuccess           = 0,    /**< 成功    */
-    BCErrCodeCommon     = -1,   /**< 参数错误类型    */
-    BCErrCodeUserCancel = -2,   /**< 用户点击取消并返回    */
-    BCErrCodeFail   = -3,       /**< 发送失败    */
-    BCErrCodeUnsupport  = -4,   /**< BeeCloud不支持 */
-};
-
-typedef NS_ENUM(NSInteger, BCObjsType) {
-    BCObjsTypeBaseReq = 100,
-    BCObjsTypePayReq,
-    BCObjsTypeQueryReq,
-    BCObjsTypeQueryRefundReq,
-    BCObjsTypeRefundStatusReq,
-    
-    BCObjsTypeBaseResp = 200,
-    BCObjsTypePayResp,
-    BCObjsTypeQueryResp,
-    BCObjsTypeRefundStatusResp,
-    
-    BCObjsTypeBaseResults = 300,
-    BCObjsTypeBillResults,
-    BCObjsTypeRefundResults
-};
-
-static NSString * const kBCDateFormat = @"yyyy-MM-dd HH:mm";
+#import "BCPayConstant.h"
 
 #pragma mark BCBaseReq
 /**
@@ -81,7 +30,7 @@ static NSString * const kBCDateFormat = @"yyyy-MM-dd HH:mm";
 /**
  *  支付渠道(WX,Ali,Union)
  */
-@property (nonatomic, assign) PayChannel channel;
+@property (nonatomic, retain) NSString *channel;
 /**
  *  订单描述,32个字节内,最长16个汉字
  */
@@ -115,7 +64,7 @@ static NSString * const kBCDateFormat = @"yyyy-MM-dd HH:mm";
  */
 @interface BCQueryReq : BCBaseReq
 
-@property (nonatomic, assign) PayChannel channel;
+@property (nonatomic, retain) NSString *channel;
 @property (nonatomic, retain) NSString *billno;
 @property (nonatomic, assign) NSString *starttime;//@"yyyyMMddHHmm"格式
 @property (nonatomic, assign) NSString *endtime;//@"yyyyMMddHHmm"格式

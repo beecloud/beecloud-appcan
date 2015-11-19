@@ -16,7 +16,7 @@
 
 @interface BCPaySDK ()<WXApiDelegate, UPPayPluginDelegate>
 
-@property (nonatomic, weak) id<BCApiDelegate> deleagte;
+@property (nonatomic, weak) id<BeeCloudDelegate> deleagte;
 
 @end
 
@@ -31,10 +31,9 @@
     return instance;
 }
 
-+ (void)initWithAppID:(NSString *)appId andAppSecret:(NSString *)appSecret {
++ (void)initWithAppID:(NSString *)appId {
     BCPayCache *instance = [BCPayCache sharedInstance];
     instance.appId = appId;
-    instance.appSecret = appSecret;
     [BCPaySDK sharedInstance];
 }
 
@@ -42,7 +41,7 @@
     return [WXApi registerApp:wxAppID];
 }
 
-+ (void)setBCApiDelegate:(id<BCApiDelegate>)delegate {
++ (void)setBeeCloudDelegate:(id<BeeCloudDelegate>)delegate {
     [BCPaySDK sharedInstance].deleagte = delegate;
 }
 
@@ -100,20 +99,23 @@
 - (void)reqPay:(BCPayReq *)req {
     if (![self checkParameters:req]) return;
     
-    NSString *cType = [self getChannelString:req.channel];
-    
     NSMutableDictionary *parameters = [BCPayUtil prepareParametersForPay];
     if (parameters == nil) {
         [self doErrorResponse:kKeyCheckParamsFail errDetail:@"请检查是否全局初始化"];
         return;
     }
-    
-    parameters[@"channel"] = cType;
+    if ([req.channel isEqualToString:PayChannelBaiduApp]) {
+        req.channel = PayChannelBaiduWap;
+    }
+    parameters[@"channel"] = req.channel;
     parameters[@"total_fee"] = [NSNumber numberWithInteger:[req.totalfee integerValue]];
     parameters[@"bill_no"] = req.billno;
     parameters[@"title"] = req.title;
     if (req.optional) {
         parameters[@"optional"] = req.optional;
+    }
+    if ([req.channel isEqualToString:PayChannelBaiduWap]) {
+        parameters[@"return_url"] = @"http://payservice.beecloud.cn/apicloud/baidu/return_url.php";
     }
     
     AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
@@ -129,13 +131,13 @@
                       [_deleagte onBCPayResp:resp];
                   }
               } else {
-                  NSLog(@"channel=%@,resp=%@", cType, response);
+            
                   NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:
                                               (NSDictionary *)response];
-                  if (req.channel == Ali) {
+                  if ([req.channel isEqualToString: PayChannelAliApp]) {
                       [dic setObject:req.scheme forKey:@"scheme"];
                   }
-                  if (req.channel == Union) {
+                  if ([req.channel isEqualToString: PayChannelUnApp]) {
                       [dic setObject:req.viewController forKey:@"viewController"];
                   }
                   [self doPayAction:req.channel source:dic];
@@ -147,20 +149,18 @@
 
 #pragma mark Do pay action
 
-- (void)doPayAction:(PayChannel)channel source:(NSMutableDictionary *)dic {
+- (void)doPayAction:(NSString *)channel source:(NSMutableDictionary *)dic {
     if (dic) {
-        switch (channel) {
-            case WX:
-                [self doWXPay:dic];
-                break;
-            case Ali:
-                [self doAliPay:dic];
-                break;
-            case Union:
-                [self doUnionPay:dic];
-                break;
-            default:
-                break;
+        if ([channel isEqualToString:PayChannelWxApp]) {
+            [self doWXPay:dic];
+        } else if ([channel isEqualToString:PayChannelAliApp]) {
+            [self doAliPay:dic];
+        } else if ([channel isEqualToString:PayChannelUnApp]) {
+            [self doUnionPay:dic];
+        } else if ([channel isEqualToString:PayChannelBaiduWap]) {
+            if (_deleagte && [_deleagte respondsToSelector:@selector(onBCPayBaidu:)]) {
+                [_deleagte onBCPayBaidu:[dic stringValueForKey:@"url" defaultValue:@""]];
+            }
         }
     }
 }
@@ -204,8 +204,6 @@
         return;
     }
     
-    NSString *cType = [[BCPaySDK sharedInstance] getChannelString:req.channel];
-    
     NSMutableDictionary *parameters = [BCPayUtil prepareParametersForPay];
     if (parameters == nil) {
         [self doErrorResponse:kKeyCheckParamsFail errDetail:@"请检查是否全局初始化"];
@@ -213,23 +211,23 @@
     }
     NSString *reqUrl = [BCPayUtil getBestHostWithFormat:kRestApiQueryBills];
     
-    if ([BCPayUtil isValidString:req.billno]) {
+    if (req.billno.isValid) {
         parameters[@"bill_no"] = req.billno;
     }
-    if ([BCPayUtil isValidString:req.starttime]) {
+    if (req.starttime.isValid) {
         parameters[@"start_time"] = [NSNumber numberWithLongLong:[BCPayUtil dateStringToMillisencond:req.starttime]];
     }
-    if ([BCPayUtil isValidString:req.endtime]) {
+    if (req.endtime.isValid) {
         parameters[@"end_time"] = [NSNumber numberWithLongLong:[BCPayUtil dateStringToMillisencond:req.endtime]];
     }
     if (req.type == BCObjsTypeQueryRefundReq) {
         BCQueryRefundReq *refundReq = (BCQueryRefundReq *)req;
-        if ([BCPayUtil isValidString:refundReq.refundno]) {
+        if (refundReq.refundno.isValid) {
             parameters[@"refund_no"] = refundReq.refundno;
         }
         reqUrl = [BCPayUtil getBestHostWithFormat:kRestApiQueryRefunds];
     }
-    parameters[@"channel"] = [[cType componentsSeparatedByString:@"_"] firstObject];
+    parameters[@"channel"] = req.channel;
     parameters[@"skip"] = [NSNumber numberWithInteger:req.skip];
     parameters[@"limit"] = [NSNumber numberWithInteger:req.limit];
     
@@ -248,7 +246,6 @@
                      [_deleagte onBCPayResp:resp];
                  }
              } else {
-                 NSLog(@"channel=%@, resp=%@", cType, response);
                  [self doQueryResponse:(NSDictionary *)response];
              }
          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -278,7 +275,7 @@
         return;
     }
     
-    if ([BCPayUtil isValidString:req.refundno]) {
+    if (req.refundno.isValid) {
         parameters[@"refund_no"] = req.refundno;
     }
     parameters[@"channel"] = @"WX";
@@ -309,37 +306,6 @@
 
 #pragma mark Util Function
 
-+ (PayChannel)getChannelType:(NSString *)channel {
-    PayChannel pType = None;
-    if ([channel isEqualToString:@"WX_APP"]) {
-        pType = WX;
-    } else if ([channel isEqualToString:@"ALI_APP"]) {
-        pType = Ali;
-    } else if ([channel isEqualToString:@"UN_APP"]) {
-        pType = Union;
-    }
-
-    return pType;
-}
-
-- (NSString *)getChannelString:(PayChannel)channel {
-    NSString *cType = @"";
-    switch (channel) {
-        case WX:
-            cType = @"WX_APP";
-            break;
-        case Ali:
-            cType = @"ALI_APP";
-            break;
-        case Union:
-            cType = @"UN_APP";
-            break;
-        default:
-            break;
-    }
-    return cType;
-}
-
 - (void)doErrorResponse:(NSString *)resultMsg errDetail:(NSString *)errMsg {
     NSMutableDictionary *dic =[NSMutableDictionary dictionaryWithCapacity:10];
     dic[kKeyResponseResultCode] = @(BCErrCodeCommon);
@@ -351,26 +317,34 @@
     }
 }
 
+- (BOOL)isValidChannel:(NSString *)channel {
+    if (!channel.isValid) {
+        return NO;
+    }
+    NSArray *channelList = @[PayChannelWxApp,PayChannelAliApp,PayChannelUnApp,PayChannelBaiduWap,PayChannelBaiduApp];
+    return [channelList containsObject:channel];
+}
+
 - (BOOL)checkParameters:(BCBaseReq *)request {
     if (request.type == BCObjsTypePayReq) {
         BCPayReq *req = (BCPayReq *)request;
-        NSString *cType = [[BCPaySDK sharedInstance] getChannelString:req.channel];
-        if (![BCPayUtil isValidString:cType]) {
+       
+        if (![self isValidChannel:req.channel]) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"channel 渠道不支持"];
             return NO;
-        } else if (![BCPayUtil isValidString:req.title] || [BCPayUtil getBytes:req.title] > 32) {
+        } else if (!req.title.isValid || [BCPayUtil getBytes:req.title] > 32) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"title 必须是长度不大于32个字节,最长16个汉字的字符串的合法字符串"];
             return NO;
-        } else if (![BCPayUtil isValidString:req.totalfee] || ![BCPayUtil isPureInt:req.totalfee]) {
+        } else if (!req.totalfee.isValid || !req.totalfee.isPureInt) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"totalfee 以分为单位，必须是整数"];
             return NO;
-        } else if (![BCPayUtil isValidString:req.billno] || (![BCPayUtil isValidTraceNo:req.billno]) || (req.billno.length < 8) || (req.billno.length > 32)) {
+        } else if (!req.billno.isValid || (!req.billno.isValidTraceNo) || (req.billno.length < 8) || (req.billno.length > 32)) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"billno 必须是长度8~32位字母和/或数字组合成的字符串"];
             return NO;
-        } else if ((req.channel == Ali) && ![BCPayUtil isValidString:req.scheme]) {
+        } else if ([req.channel isEqualToString:PayChannelAliApp] && !req.scheme.isValid) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"scheme 不是合法的字符串，将导致无法从支付宝钱包返回应用"];
             return NO;
-        } else if (req.channel == WX && ![WXApi isWXAppInstalled]) {
+        } else if ([req.channel isEqualToString:PayChannelWxApp] && ![WXApi isWXAppInstalled]) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"未找到微信客户端，请先下载安装"];
             return NO;
         }
@@ -400,7 +374,7 @@
                 errcode = BCErrCodeFail;
                 break;
         }
-        NSString *result = [BCPayUtil isValidString:tempResp.errStr]?[NSString stringWithFormat:@"%@,%@",strMsg,tempResp.errStr]:strMsg;
+        NSString *result = tempResp.errStr.isValid?[NSString stringWithFormat:@"%@,%@",strMsg,tempResp.errStr]:strMsg;
         
         NSMutableDictionary *dic =[NSMutableDictionary dictionaryWithCapacity:10];
         dic[kKeyResponseResultCode] = @(errcode);

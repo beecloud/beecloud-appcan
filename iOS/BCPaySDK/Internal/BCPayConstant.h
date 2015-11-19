@@ -11,7 +11,7 @@
 #ifndef BCPaySDK_BCPayConstant_h
 #define BCPaySDK_BCPayConstant_h
 
-static NSString * const kApiVersion = @"1.1.0";//api版本号
+static NSString * const kApiVersion = @"1.2.0";//api版本号
 
 static NSString * const kNetWorkError = @"网络请求失败";
 static NSString * const kKeyResponseResultCode = @"result_code";
@@ -39,5 +39,56 @@ static NSString * const kRestApiRefund = @"%@/rest/refund";
 static NSString * const kRestApiQueryBills = @"%@/rest/bills";
 static NSString * const kRestApiQueryRefunds = @"%@/rest/refunds";
 static NSString * const kRestApiRefundState = @"%@/rest/refund/status";
+
+static NSString * const PayChannelWxApp = @"WX_APP";//微信APP
+static NSString * const PayChannelAliApp = @"ALI_APP";//支付宝APP
+static NSString * const PayChannelUnApp = @"UN_APP";//银联APP
+static NSString * const PayChannelBaiduApp = @"BD_APP";//
+static NSString * const PayChannelBaiduWap = @"BD_WAP";
+
+/**
+ *  BCPay URL type for handling URLs.
+ */
+typedef NS_ENUM(NSInteger, BCPayUrlType) {
+    /**
+     *  Unknown type.
+     */
+    BCPayUrlUnknown,
+    /**
+     *  WeChat pay.
+     */
+    BCPayUrlWeChat,
+    /**
+     *  Alipay.
+     */
+    BCPayUrlAlipay
+};
+
+enum  BCErrCode {
+    BCSuccess           = 0,    /**< 成功    */
+    BCErrCodeCommon     = -1,   /**< 参数错误类型    */
+    BCErrCodeUserCancel = -2,   /**< 用户点击取消并返回    */
+    BCErrCodeFail   = -3,       /**< 发送失败    */
+    BCErrCodeUnsupport  = -4,   /**< BeeCloud不支持 */
+};
+
+typedef NS_ENUM(NSInteger, BCObjsType) {
+    BCObjsTypeBaseReq = 100,
+    BCObjsTypePayReq,
+    BCObjsTypeQueryReq,
+    BCObjsTypeQueryRefundReq,
+    BCObjsTypeRefundStatusReq,
+    
+    BCObjsTypeBaseResp = 200,
+    BCObjsTypePayResp,
+    BCObjsTypeQueryResp,
+    BCObjsTypeRefundStatusResp,
+    
+    BCObjsTypeBaseResults = 300,
+    BCObjsTypeBillResults,
+    BCObjsTypeRefundResults
+};
+
+static NSString * const kBCDateFormat = @"yyyy-MM-dd HH:mm";
 
 #endif

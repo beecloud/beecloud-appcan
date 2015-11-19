@@ -22,11 +22,6 @@
 @property (nonatomic, strong) NSString *appId;
 
 /**
- *  App key obtained when registering this app in BeeCloud website.
- */
-@property (nonatomic, strong) NSString *appSecret;
-
-/**
  *  wechat open platform appID
  */
 @property (nonatomic, strong) NSString *wxAppID;

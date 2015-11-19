@@ -10,6 +10,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "BCPayCache.h"
 
+
 @implementation BCPayUtil
 
 + (AFHTTPRequestOperationManager *)getAFHTTPRequestOperationManager {
@@ -30,38 +31,15 @@
 
 + (NSMutableDictionary *)prepareParametersForPay {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
-   // NSNumber *timeStamp = [NSNumber numberWithLongLong:[BCPayUtil dateToMillisecond:[NSDate date]]];
-   // NSString *appSign = [BCPayUtil getAppSignature:[NSString stringWithFormat:@"%@",timeStamp]];
-    if([BCPayUtil isValidString:[BCPayCache sharedInstance].appId]) {
+    if([BCPayCache sharedInstance].appId.isValid) {
         [parameters setObject:[BCPayCache sharedInstance].appId forKey:@"app_id"];
-   //     [parameters setObject:timeStamp forKey:@"timestamp"];
-    //    [parameters setObject:appSign forKey:@"app_sign"];
         return parameters;
     }
     return nil;
 }
 
-+ (NSString *)getAppSignature:(NSString *)timeStamp {
-    NSString *appid = [BCPayCache sharedInstance].appId;
-    NSString *appsecret = [BCPayCache sharedInstance].appSecret;
-    
-    if (![BCPayUtil isValidString:appid] || ![BCPayUtil isValidString:appsecret])
-        return nil;
-    
-    NSString *input = [appid stringByAppendingString:timeStamp];
-    input = [input stringByAppendingString:appsecret];
-    const char* str = [input UTF8String];
-    unsigned char result[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(str, (CC_LONG)strlen(str), result);
-    NSMutableString *ret = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH*2];
-    for(int i = 0; i<CC_MD5_DIGEST_LENGTH; i++) {
-        [ret appendFormat:@"%02x",result[i]];
-    }
-    return ret;
-}
-
 + (NSString *)getBestHostWithFormat:(NSString *)format {
-    NSString *verHost = [NSString stringWithFormat:@"%@%@",kBCHosts[arc4random()%kBCHostCount],reqApiVersion]; //2015.07.28
+    NSString *verHost = [NSString stringWithFormat:@"%@%@",kBCHosts[arc4random()%kBCHostCount],reqApiVersion];
     return [NSString stringWithFormat:format, verHost];
 }
 
@@ -163,7 +141,7 @@
 }
 
 + (BOOL)isValidTraceNo:(NSString *)str {
-    if (![BCPayUtil isValidString:str]) return NO;
+    if (!str.isValid) return NO;
     for (NSUInteger i = 0; i < str.length; i++) {
         unichar ch = [str characterAtIndex:i];
         // Invalid character.
@@ -172,26 +150,8 @@
     return YES;
 }
 
-+ (BOOL)isValidString:(NSString *)str {
-    if (str == nil || (NSNull *)str == [NSNull null] || str.length == 0 ) return NO;
-    return YES;
-}
-
-+ (BOOL)isPureInt:(NSString *)str {
-    NSScanner *scan = [NSScanner scannerWithString:str];
-    int val;
-    return [scan scanInt:&val] && [scan isAtEnd];
-}
-
-
-+ (BOOL)isPureFloat:(NSString *)str {
-    NSScanner *scan = [NSScanner scannerWithString:str];
-    float val;
-    return [scan scanFloat:&val] && [scan isAtEnd];
-}
-
 + (NSUInteger)getBytes:(NSString *)str {
-    if (![BCPayUtil isValidString:str]) {
+    if (!str.isValid) {
         return 0;
     } else {
         NSStringEncoding enc = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);

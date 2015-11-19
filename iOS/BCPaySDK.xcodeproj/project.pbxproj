@@ -22,6 +22,12 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		362FC8781BF42D6B007450FF /* NSDictionary+Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FC8761BF42D6B007450FF /* NSDictionary+Utils.h */; };
+		362FC8791BF42D6B007450FF /* NSDictionary+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FC8771BF42D6B007450FF /* NSDictionary+Utils.m */; };
+		362FC87C1BF43362007450FF /* BaiduViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FC87A1BF43362007450FF /* BaiduViewController.h */; };
+		362FC87D1BF43362007450FF /* BaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FC87B1BF43362007450FF /* BaiduViewController.m */; };
+		362FC8801BF43A82007450FF /* NSString+IsValid.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FC87E1BF43A82007450FF /* NSString+IsValid.h */; };
+		362FC8811BF43A82007450FF /* NSString+IsValid.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FC87F1BF43A82007450FF /* NSString+IsValid.m */; };
 		364A5BCE1B78A03500C1CAE8 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8B1B78A03500C1CAE8 /* AFHTTPRequestOperation.h */; };
 		364A5BD01B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8D1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h */; };
 		364A5BD21B78A03500C1CAE8 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8F1B78A03500C1CAE8 /* AFHTTPSessionManager.h */; };
@@ -46,8 +52,8 @@
 		364A5C001B79C4AB00C1CAE8 /* EUExBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5BFD1B79C4AB00C1CAE8 /* EUExBase.h */; };
 		364A5C011B79C4AB00C1CAE8 /* EUExBaseDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5BFE1B79C4AB00C1CAE8 /* EUExBaseDefine.h */; };
 		364A5C021B79C4AB00C1CAE8 /* EUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5BFF1B79C4AB00C1CAE8 /* EUtility.h */; };
-		364A5C051B79C51E00C1CAE8 /* BCPay.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C031B79C51E00C1CAE8 /* BCPay.h */; };
-		364A5C061B79C51E00C1CAE8 /* BCPay.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5C041B79C51E00C1CAE8 /* BCPay.m */; };
+		364A5C051B79C51E00C1CAE8 /* BeeCloud.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C031B79C51E00C1CAE8 /* BeeCloud.h */; };
+		364A5C061B79C51E00C1CAE8 /* BeeCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5C041B79C51E00C1CAE8 /* BeeCloud.m */; };
 		364A5C101B79D6B700C1CAE8 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C081B79D6B700C1CAE8 /* JSON.h */; };
 		364A5C111B79D6B700C1CAE8 /* JSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C091B79D6B700C1CAE8 /* JSONParser.h */; };
 		364A5C121B79D6B700C1CAE8 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C0A1B79D6B700C1CAE8 /* NSObject+SBJSON.h */; };
@@ -92,6 +98,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		362FC8761BF42D6B007450FF /* NSDictionary+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Utils.h"; sourceTree = "<group>"; };
+		362FC8771BF42D6B007450FF /* NSDictionary+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Utils.m"; sourceTree = "<group>"; };
+		362FC87A1BF43362007450FF /* BaiduViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduViewController.h; sourceTree = "<group>"; };
+		362FC87B1BF43362007450FF /* BaiduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduViewController.m; sourceTree = "<group>"; };
+		362FC87E1BF43A82007450FF /* NSString+IsValid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsValid.h"; sourceTree = "<group>"; };
+		362FC87F1BF43A82007450FF /* NSString+IsValid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsValid.m"; sourceTree = "<group>"; };
 		364A5B8B1B78A03500C1CAE8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		364A5B8C1B78A03500C1CAE8 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		364A5B8D1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -129,8 +141,8 @@
 		364A5BFD1B79C4AB00C1CAE8 /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
 		364A5BFE1B79C4AB00C1CAE8 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
 		364A5BFF1B79C4AB00C1CAE8 /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
-		364A5C031B79C51E00C1CAE8 /* BCPay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCPay.h; sourceTree = "<group>"; };
-		364A5C041B79C51E00C1CAE8 /* BCPay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCPay.m; sourceTree = "<group>"; };
+		364A5C031B79C51E00C1CAE8 /* BeeCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeeCloud.h; sourceTree = "<group>"; };
+		364A5C041B79C51E00C1CAE8 /* BeeCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeeCloud.m; sourceTree = "<group>"; };
 		364A5C081B79D6B700C1CAE8 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		364A5C091B79D6B700C1CAE8 /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		364A5C0A1B79D6B700C1CAE8 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -236,6 +248,10 @@
 		364A5BA81B78A03500C1CAE8 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
+				362FC87E1BF43A82007450FF /* NSString+IsValid.h */,
+				362FC87F1BF43A82007450FF /* NSString+IsValid.m */,
+				362FC8761BF42D6B007450FF /* NSDictionary+Utils.h */,
+				362FC8771BF42D6B007450FF /* NSDictionary+Utils.m */,
 				364A5BA91B78A03500C1CAE8 /* BCPayCache.h */,
 				364A5BAA1B78A03500C1CAE8 /* BCPayCache.m */,
 				364A5BAB1B78A03500C1CAE8 /* BCPayConstant.h */,
@@ -248,6 +264,8 @@
 		364A5BAE1B78A03500C1CAE8 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				362FC87A1BF43362007450FF /* BaiduViewController.h */,
+				362FC87B1BF43362007450FF /* BaiduViewController.m */,
 				364A5BAF1B78A03500C1CAE8 /* BCPayObject.h */,
 				364A5BB01B78A03500C1CAE8 /* BCPayObject.m */,
 				364A5BB11B78A03500C1CAE8 /* BCPaySDK.h */,
@@ -262,8 +280,8 @@
 				364A5BFD1B79C4AB00C1CAE8 /* EUExBase.h */,
 				364A5BFE1B79C4AB00C1CAE8 /* EUExBaseDefine.h */,
 				364A5BFF1B79C4AB00C1CAE8 /* EUtility.h */,
-				364A5C031B79C51E00C1CAE8 /* BCPay.h */,
-				364A5C041B79C51E00C1CAE8 /* BCPay.m */,
+				364A5C031B79C51E00C1CAE8 /* BeeCloud.h */,
+				364A5C041B79C51E00C1CAE8 /* BeeCloud.m */,
 			);
 			path = AppCan;
 			sourceTree = "<group>";
@@ -326,10 +344,13 @@
 				364A5BD01B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h in Headers */,
 				364A5BD51B78A03500C1CAE8 /* AFNetworkReachabilityManager.h in Headers */,
 				364A5BD91B78A03500C1CAE8 /* AFURLConnectionOperation.h in Headers */,
+				362FC8781BF42D6B007450FF /* NSDictionary+Utils.h in Headers */,
 				364A5C021B79C4AB00C1CAE8 /* EUtility.h in Headers */,
 				364A5BCE1B78A03500C1CAE8 /* AFHTTPRequestOperation.h in Headers */,
 				364A5C141B79D6B700C1CAE8 /* SBJSON.h in Headers */,
+				362FC87C1BF43362007450FF /* BaiduViewController.h in Headers */,
 				364A5BE21B78A03500C1CAE8 /* APayAuthInfo.h in Headers */,
+				362FC8801BF43A82007450FF /* NSString+IsValid.h in Headers */,
 				364A5BDF1B78A03500C1CAE8 /* AFURLSessionManager.h in Headers */,
 				364A5BE31B78A03500C1CAE8 /* UPPayPlugin.h in Headers */,
 				364A5BE11B78A03500C1CAE8 /* AlipaySDK.h in Headers */,
@@ -343,7 +364,7 @@
 				364A5C121B79D6B700C1CAE8 /* NSObject+SBJSON.h in Headers */,
 				364A5BDD1B78A03500C1CAE8 /* AFURLResponseSerialization.h in Headers */,
 				364A5BD41B78A03500C1CAE8 /* AFNetworking.h in Headers */,
-				364A5C051B79C51E00C1CAE8 /* BCPay.h in Headers */,
+				364A5C051B79C51E00C1CAE8 /* BeeCloud.h in Headers */,
 				364A5C011B79C4AB00C1CAE8 /* EUExBaseDefine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,7 +437,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nLIB_NAME=\"libuexBeeCloud.a\"\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}\n# Working dir will be deleted after the framework creation.\nWRK_DIR=${SRCROOT}/build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${PROJECT_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${PROJECT_NAME}\" -sdk iphonesimulator clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\n\ncp -R \"${DEVICE_DIR}/usr/local/include/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${LIB_NAME}\" \"${SIMULATOR_DIR}/${LIB_NAME}\" -output \"${INSTALL_DIR}/${LIB_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n\nopen \"${INSTALL_DIR}\"";
+			shellScript = "\nLIB_NAME=\"libuexBeeCloud.a\"\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${PROJECT_NAME}\n# Working dir will be deleted after the framework creation.\nWRK_DIR=${SRCROOT}/build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${PROJECT_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${PROJECT_NAME}\" -sdk iphonesimulator clean build\n\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\n\n# cp -R \"${DEVICE_DIR}/usr/local/include/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${DEVICE_DIR}/${LIB_NAME}\" \"${SIMULATOR_DIR}/${LIB_NAME}\" -output \"${INSTALL_DIR}/${LIB_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n\nopen \"${INSTALL_DIR}\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -429,14 +450,17 @@
 				36DCE2311B8B0A10004BB25E /* AFHTTPRequestOperationManager.m in Sources */,
 				36DCE2331B8B0A10004BB25E /* AFHTTPSessionManager.m in Sources */,
 				36DCE2361B8B0A10004BB25E /* AFNetworkReachabilityManager.m in Sources */,
+				362FC87D1BF43362007450FF /* BaiduViewController.m in Sources */,
 				36DCE2381B8B0A10004BB25E /* AFSecurityPolicy.m in Sources */,
+				362FC8811BF43A82007450FF /* NSString+IsValid.m in Sources */,
 				36DCE23A1B8B0A10004BB25E /* AFURLConnectionOperation.m in Sources */,
 				36DCE23C1B8B0A10004BB25E /* AFURLRequestSerialization.m in Sources */,
 				36DCE23E1B8B0A11004BB25E /* AFURLResponseSerialization.m in Sources */,
 				36DCE2401B8B0A11004BB25E /* AFURLSessionManager.m in Sources */,
 				364A5C191B79EFE000C1CAE8 /* BCPaySDK.m in Sources */,
+				362FC8791BF42D6B007450FF /* NSDictionary+Utils.m in Sources */,
 				364A5BEB1B78A03500C1CAE8 /* BCPayUtil.m in Sources */,
-				364A5C061B79C51E00C1CAE8 /* BCPay.m in Sources */,
+				364A5C061B79C51E00C1CAE8 /* BeeCloud.m in Sources */,
 				364A5BED1B78A03500C1CAE8 /* BCPayObject.m in Sources */,
 				364A5BE81B78A03500C1CAE8 /* BCPayCache.m in Sources */,
 			);
