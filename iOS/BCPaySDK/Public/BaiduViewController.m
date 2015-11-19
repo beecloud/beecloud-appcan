@@ -42,9 +42,12 @@
     titleView.backgroundColor = [UIColor colorWithRed:233.0/255.0 green:70.0/255.0 blue:67.0/255.0 alpha:1];
     backBtn = [[UIButton alloc] initWithFrame:CGRectMake(10, 23, 40, 40)];
     backBtn.backgroundColor = [UIColor clearColor];
-    [backBtn setTitle:@"取消" forState:UIControlStateNormal];
+    [backBtn setTitle:@"+" forState:UIControlStateNormal];
+    backBtn.titleLabel.font= [UIFont systemFontOfSize:40];
+    backBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
     [backBtn addTarget:self action:@selector(goBack) forControlEvents:UIControlEventTouchUpInside];
-    [titleView addSubview:backBtn];
+    CGAffineTransform at = CGAffineTransformMakeRotation(M_PI/4);
+    [backBtn setTransform:at];    [titleView addSubview:backBtn];
     [self.view addSubview:titleView];
     
     [bdWebView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.url]]];
@@ -77,7 +80,8 @@
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"加载失败，请重试" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
@@ -122,6 +126,7 @@
         [self.navigationController popViewControllerAnimated:YES];
         return NO;
     }
+    
     return YES;
 }
 

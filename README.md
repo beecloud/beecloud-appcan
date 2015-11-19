@@ -3,38 +3,42 @@
 
 </br>
 ## **概述**
-[uexBeeCloud](http://plugin.appcan.cn/details.html?id=481_index) 封装了支付宝（ALI\_APP），微信（WX\_APP），银联（UN\_APP）三个主流渠道的支付接口。  
-使用此模块可轻松实现各个渠道的支付功能。
-使用之前需要先到[BeeCloud](https://beecloud.cn) 注册认证，并[快速开始](https://beecloud.cn/apply)接入BeeCloud Pay.
+[uexBeeCloud](http://plugin.appcan.cn/details.html?id=481_index) 封装了支付宝(ALI\_APP)、微信(WX\_APP)、银联(UN\_APP)、百度钱包(BD_APP)四个主流渠道的支付接口。  
+使用此模块可轻松实现各个渠道的支付功能。使用之前需要先到[BeeCloud](https://beecloud.cn) 注册认证，并[快速开始](https://beecloud.cn/apply)接入BeeCloud Pay.
 
 </br>
 </br>
 ## **AppCan插件**
 
-**此插件需要用户自定义使用**  
-iOS 插件`uexBeeCloud`需要自定义插件使用，即需要更改`uexBeeCloud`插件包里的 uexBeeCloud.plist 文件的`CFBundleURLSchemes`值。
-> 使用微信支付，请同时勾选AppCan官网公共插件里**uexWeixin**。
+> **使用微信支付，请同时勾选AppCan官网公共插件里**uexWeixin**.**
 
-示例配置代码如下:
+`uexBeeCloud`iOS插件需要用户在`config.xml`配置使用，示例配置代码如下:
 
-```js
-<dict>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>uexBeeCloud</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>自定义的URL Scheme</string>
-			</array>
-		</dict>
-	</array>
-</dict>
 ```
-配置描述:  
-> 如果需要使用微信支付，必须配置URL Scheme为微信开放平台APPID;  
-> 如果不需要使用微信支付，可以自定义填写。
+<config desc="uexBeeCloud" type="URLSCHEME">
+      <urlScheme name="uexBeeCloud" schemes="['wxf1aa465362b4c8f1']"/>
+</config>
+```
+配置描述:
+
+* 如果需要使用微信支付，"wxf1aa465362b4c8f1"换成您自己申请的微信开放平台APPID  
+* 如果不需要使用微信支付，可以自定义填写  
+
+iOS 9 以后，为了预防APP通过非正常渠道获取用户的某些隐私信息，Apple启用了URLScheme白名单机制。
+	
+* **为了正常使用插件的所有功能还需要配置URLScheme白名单**([什么是URLScheme白名单](http://bbs.appcan.cn/forum.php?mod=viewthread&tid=29503&extra=))
+* 配置白名单方法请参考[这里](http://newdocx.appcan.cn/newdocx/docx?type=1505_1291#设置urlScheme白名单)
+* **uexBeeCloud**需要进白名单添加的URLScheme如下
+
+```
+<config desc="whiteList" type="AUTHORITY">
+      <permission platform="iOS" info="urlSchemeWhiteList">
+          <string>weixin</string>
+          <string>wxpay</string>
+          <string>alipay</string>
+      </permission>
+</config>
+```
 
 </br>
 </br>
@@ -77,8 +81,7 @@ function pay() {
         title: "appcan",
        billno: "2015082418050048",
      totalfee: 1,
-       scheme: '自定义的URL Scheme',
-     optional: {'userID':'张三','mobile':'0512-86861620'} //用于商户扩展业务参数
+     optional: {'userID':'张三','mobile':'0512-86861620'} //用于商户扩展业务参数,会在webhook回调中返回
     };
     uexBeeCloud.pay(JSON.stringify(payData));
 }
@@ -122,17 +125,11 @@ totalfee：
  * 默认值：无, 必填  
  * 描述：订单金额。以分为单位，例如：100代表1元。
  
-scheme：  
-
- * 类型：String  
- * 默认值：无, `iOS支付宝支付必填` 
- * 描述：Url Scheme。支付宝需要，在插件包中的uexBeeCloud.plist中配置。如果需要使用微信支付，请在uexBeeCloud.plist中将URLScheme的值配置为微信开放平台APPID。
- 
 optional：  
 
  * 类型：Map(String, String) 
  * 默认值：无, 非必填  
- * 描述：商户业务扩展集。用于商户传递处理业务参数。例：{'userID':'张三','mobile':'0512-86861620'}
+ * 描述：商户业务扩展集。用于商户传递处理业务参数,会在[webhook回调](https://beecloud.cn/doc/?index=8)中返回。例：{'userID':'张三','mobile':'0512-86861620'}
   
 </br>
 </br>  

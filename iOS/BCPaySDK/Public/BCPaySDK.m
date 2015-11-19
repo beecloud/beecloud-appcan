@@ -104,7 +104,9 @@
         [self doErrorResponse:kKeyCheckParamsFail errDetail:@"请检查是否全局初始化"];
         return;
     }
-    
+    if ([req.channel isEqualToString:PayChannelBaiduApp]) {
+        req.channel = PayChannelBaiduWap;
+    }
     parameters[@"channel"] = req.channel;
     parameters[@"total_fee"] = [NSNumber numberWithInteger:[req.totalfee integerValue]];
     parameters[@"bill_no"] = req.billno;
@@ -113,7 +115,7 @@
         parameters[@"optional"] = req.optional;
     }
     if ([req.channel isEqualToString:PayChannelBaiduWap]) {
-        parameters[@"return_url"] = @"http://58.211.191.85/Baidu/return_url.php";
+        parameters[@"return_url"] = @"http://payservice.beecloud.cn/apicloud/baidu/return_url.php";
     }
     
     AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
@@ -319,7 +321,7 @@
     if (!channel.isValid) {
         return NO;
     }
-    NSArray *channelList = @[PayChannelWxApp,PayChannelAliApp,PayChannelUnApp,PayChannelBaiduWap];
+    NSArray *channelList = @[PayChannelWxApp,PayChannelAliApp,PayChannelUnApp,PayChannelBaiduWap,PayChannelBaiduApp];
     return [channelList containsObject:channel];
 }
 

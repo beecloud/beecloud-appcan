@@ -48,7 +48,16 @@
         payReq.title = [params stringValueForKey:@"title" defaultValue:@""];
         payReq.totalfee = [NSString stringWithFormat:@"%@",@([params integerValueForKey:@"totalfee" defaultValue:0])];
         payReq.billno = [params stringValueForKey:@"billno" defaultValue:@""];
-        payReq.scheme = [params stringValueForKey:@"scheme" defaultValue:@""];
+        //scheme
+        NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+        NSArray *schemes = [info arrayValueForKey:@"CFBundleURLTypes" defaultValue:nil];
+        if (schemes && schemes.count > 0) {
+            NSDictionary *schdic = [schemes firstObject];
+            NSArray *schs = [schdic arrayValueForKey:@"CFBundleURLSchemes" defaultValue:nil];
+            if (schs && schs.count > 0) {
+                payReq.scheme = [schs firstObject];
+            }
+        }
         payReq.viewController = [EUtility brwCtrl:meBrwView];
         payReq.optional = [params dictValueForKey:@"optional" defaultValue:nil];
         [BCPaySDK sendBCReq:payReq];

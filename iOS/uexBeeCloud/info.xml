@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexBeeCloud" version="3.0" build="4">
-        <info>build 4:BeeCloud秒支付功能</info>
+        uexName="uexBeeCloud" version="3.0" build="5">
+        <info>build 5:增加百度</info>
     </plugin>
 </uexplugins>

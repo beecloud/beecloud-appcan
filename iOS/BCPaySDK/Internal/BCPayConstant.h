@@ -11,7 +11,7 @@
 #ifndef BCPaySDK_BCPayConstant_h
 #define BCPaySDK_BCPayConstant_h
 
-static NSString * const kApiVersion = @"1.1.0";//api版本号
+static NSString * const kApiVersion = @"1.2.0";//api版本号
 
 static NSString * const kNetWorkError = @"网络请求失败";
 static NSString * const kKeyResponseResultCode = @"result_code";
@@ -43,6 +43,7 @@ static NSString * const kRestApiRefundState = @"%@/rest/refund/status";
 static NSString * const PayChannelWxApp = @"WX_APP";//微信APP
 static NSString * const PayChannelAliApp = @"ALI_APP";//支付宝APP
 static NSString * const PayChannelUnApp = @"UN_APP";//银联APP
+static NSString * const PayChannelBaiduApp = @"BD_APP";//
 static NSString * const PayChannelBaiduWap = @"BD_WAP";
 
 /**
