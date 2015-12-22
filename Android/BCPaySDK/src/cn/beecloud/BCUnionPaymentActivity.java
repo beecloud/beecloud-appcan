@@ -15,7 +15,10 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.unionpay.UPPayAssistEx;
@@ -27,6 +30,9 @@ import cn.beecloud.entity.BCPayResult;
  */
 public class BCUnionPaymentActivity extends Activity {
 
+	private static Integer targetVersion = 53;
+    private static final String UN_APK_PACKAGE = "com.unionpay.uppay";
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,15 +45,23 @@ public class BCUnionPaymentActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String tn= extras.getString("tn");
-            int retPay = UPPayAssistEx.startPay(this, null, null, tn, "00");
+            int retPay;
 
+            int curVer = getUNAPKVersion();
+            if (curVer == -1)
+                retPay = -1;
+            else if (curVer < targetVersion)
+                retPay = 2;
+            else
+                retPay = UPPayAssistEx.startPay(this, null, null, tn, "00");
+            
             //插件问题 -1表示没有安装插件，2表示插件需要升级
             if (retPay==-1 || retPay==2) {
             	
             	AlertDialog.Builder builder = new AlertDialog.Builder(
             			BCUnionPaymentActivity.this);
 		        builder.setTitle("提示");
-		        builder.setMessage("完成支付需要安装银联支付控件，是否安装？");
+		        builder.setMessage("完成支付需要安装或升级银联支付控件，是否安装？");
 		        
 		        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
 		            @Override
@@ -118,16 +132,9 @@ public class BCUnionPaymentActivity extends Activity {
             result = BCPayResult.BC_ERR_CODE_COMMON;
             errMsg = BCPayResult.RESULT_FAIL;
         } else if (str.equalsIgnoreCase("cancel")) {
-            result = BCPayResult.BC_CANCLE;
+            result = BCPayResult.BC_CANCEL;
             errMsg = BCPayResult.RESULT_CANCEL;
         }
-        
-        /*
-        Intent intent = new Intent();
-        intent.putExtra("resultCode", result);
-        intent.putExtra("resultMsg", errMsg);
-        
-        setResult(Activity.RESULT_OK, intent);*/
         
         final Map<String, Object> resultMap = new HashMap<String, Object>();
     	resultMap.put("result_code", result);
@@ -145,5 +152,19 @@ public class BCUnionPaymentActivity extends Activity {
     	});
         
         this.finish();
+    }
+    
+    private int getUNAPKVersion() {
+        Integer version = -1;
+
+        PackageManager packageManager=getPackageManager();
+        try {
+            PackageInfo Info=packageManager.getPackageInfo(UN_APK_PACKAGE, 0);
+            version = Info.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e("union payment", e.getMessage());
+        }
+
+        return version;
     }
 }
