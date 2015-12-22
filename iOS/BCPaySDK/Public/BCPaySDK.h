@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BCPayObject.h"
+#import "BCPayUtil.h"
 
 @class BCBaseReq;
 @class BCBaseResp;
@@ -65,6 +66,13 @@
  *  @param delegate BCApiDelegate对象，用来接收BeeCloud触发的消息。
  */
 + (void)setBeeCloudDelegate:(id<BeeCloudDelegate>)delegate;
+
+/**
+ *  获取delegate
+ *
+ *  @return delegate
+ */
++ (id<BeeCloudDelegate>)getBeeCloudDelegate;
 
 /**
  *  获取API版本号

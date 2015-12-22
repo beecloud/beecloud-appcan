@@ -8,10 +8,10 @@
 
 #import "BCPaySDK.h"
 
-#import "BCPayUtil.h"
 #import "WXApi.h"
 #import "AlipaySDK.h"
 #import "UPPayPlugin.h"
+#import "PaySandBoxViewController.h"
 
 
 @interface BCPaySDK ()<WXApiDelegate, UPPayPluginDelegate>
@@ -43,6 +43,10 @@
 
 + (void)setBeeCloudDelegate:(id<BeeCloudDelegate>)delegate {
     [BCPaySDK sharedInstance].deleagte = delegate;
+}
+
++ (id<BeeCloudDelegate>)getBeeCloudDelegate {
+    return [BCPaySDK sharedInstance].deleagte;
 }
 
 + (BOOL)handleOpenUrl:(NSURL *)url {
@@ -131,16 +135,26 @@
                       [_deleagte onBCPayResp:resp];
                   }
               } else {
-            
+                  
                   NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:
                                               (NSDictionary *)response];
-                  if ([req.channel isEqualToString: PayChannelAliApp]) {
-                      [dic setObject:req.scheme forKey:@"scheme"];
+                  if ([BCPayCache currentMode]) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          PaySandboxViewController *view = [[PaySandboxViewController alloc] init];
+                          view.req = req;
+                          view.bcId = [dic stringValueForKey:@"id" defaultValue:@""];
+                          [req.viewController presentViewController:view animated:YES completion:^{
+                          }];
+                      });
+                  } else {
+                      if ([req.channel isEqualToString: PayChannelAliApp]) {
+                          [dic setObject:req.scheme forKey:@"scheme"];
+                      }
+                      if ([req.channel isEqualToString: PayChannelUnApp]) {
+                          [dic setObject:req.viewController forKey:@"viewController"];
+                      }
+                      [self doPayAction:req.channel source:dic];
                   }
-                  if ([req.channel isEqualToString: PayChannelUnApp]) {
-                      [dic setObject:req.viewController forKey:@"viewController"];
-                  }
-                  [self doPayAction:req.channel source:dic];
               }
           } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
               [self doErrorResponse:kNetWorkError errDetail:kNetWorkError];
@@ -311,7 +325,7 @@
     dic[kKeyResponseResultCode] = @(BCErrCodeCommon);
     dic[kKeyResponseResultMsg] = resultMsg;
     dic[kKeyResponseErrDetail] = errMsg;
-   
+    
     if (_deleagte && [_deleagte respondsToSelector:@selector(onBCPayResp:)]) {
         [_deleagte onBCPayResp:dic];
     }
@@ -328,7 +342,7 @@
 - (BOOL)checkParameters:(BCBaseReq *)request {
     if (request.type == BCObjsTypePayReq) {
         BCPayReq *req = (BCPayReq *)request;
-       
+        
         if (![self isValidChannel:req.channel]) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"channel 渠道不支持"];
             return NO;
@@ -344,7 +358,7 @@
         } else if ([req.channel isEqualToString:PayChannelAliApp] && !req.scheme.isValid) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"scheme 不是合法的字符串，将导致无法从支付宝钱包返回应用"];
             return NO;
-        } else if ([req.channel isEqualToString:PayChannelWxApp] && ![WXApi isWXAppInstalled]) {
+        } else if ([req.channel isEqualToString:PayChannelWxApp] && ![WXApi isWXAppInstalled] && ![BCPayCache currentMode]) {
             [self doErrorResponse:kKeyCheckParamsFail errDetail:@"未找到微信客户端，请先下载安装"];
             return NO;
         }
@@ -420,7 +434,7 @@
     dic[kKeyResponseResultCode] = @(errcode);
     dic[kKeyResponseResultMsg] = strMsg;
     dic[kKeyResponseErrDetail] = strMsg;
-   
+    
     if (_deleagte && [_deleagte respondsToSelector:@selector(onBCPayResp:)]) {
         [_deleagte onBCPayResp:dic];
     }
@@ -438,12 +452,12 @@
         errcode = BCErrCodeUserCancel;
         strMsg = @"支付取消";
     }
-
+    
     NSMutableDictionary *dic =[NSMutableDictionary dictionaryWithCapacity:10];
     dic[kKeyResponseResultCode] = @(errcode);
     dic[kKeyResponseResultMsg] = strMsg;
     dic[kKeyResponseErrDetail] = strMsg;
-  
+    
     if (_deleagte && [_deleagte respondsToSelector:@selector(onBCPayResp:)]) {
         [_deleagte onBCPayResp:dic];
     }

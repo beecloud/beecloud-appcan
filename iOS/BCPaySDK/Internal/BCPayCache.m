@@ -17,6 +17,7 @@
     static BCPayCache *instance = nil;
     dispatch_once(&onceToken, ^{
         instance = [[BCPayCache alloc] init];
+        instance.sandbox = NO;
         
         instance.appId = nil;
         instance.wxAppID = nil;
@@ -24,6 +25,10 @@
         instance.willPrintLogMsg = NO;
     });
     return instance;
+}
+
++ (BOOL)currentMode {
+    return [BCPayCache sharedInstance].sandbox;
 }
 
 @end

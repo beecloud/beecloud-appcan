@@ -11,7 +11,7 @@
 #ifndef BCPaySDK_BCPayConstant_h
 #define BCPaySDK_BCPayConstant_h
 
-static NSString * const kApiVersion = @"1.2.0";//api版本号
+static NSString * const kApiVersion = @"1.3.0";//api版本号
 
 static NSString * const kNetWorkError = @"网络请求失败";
 static NSString * const kKeyResponseResultCode = @"result_code";
@@ -31,14 +31,17 @@ static NSString * const kBCHosts[] = {@"https://apisz.beecloud.cn",
     @"https://apibj.beecloud.cn",
     @"https://apihz.beecloud.cn"};
 
-static NSString * const reqApiVersion = @"/1";
+static NSString * const reqApiVersion = @"/2/rest";
 
 //rest api
-static NSString * const kRestApiPay = @"%@/rest/app/bill";
+static NSString * const kRestApiPay = @"%@%@/app/bill";
 static NSString * const kRestApiRefund = @"%@/rest/refund";
 static NSString * const kRestApiQueryBills = @"%@/rest/bills";
 static NSString * const kRestApiQueryRefunds = @"%@/rest/refunds";
 static NSString * const kRestApiRefundState = @"%@/rest/refund/status";
+
+//sandbox
+static NSString * const kRestApiSandboxNotify = @"%@%@/notify/";
 
 static NSString * const PayChannelWxApp = @"WX_APP";//微信APP
 static NSString * const PayChannelAliApp = @"ALI_APP";//支付宝APP

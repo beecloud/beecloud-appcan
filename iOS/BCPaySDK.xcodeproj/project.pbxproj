@@ -73,6 +73,8 @@
 		36DCE23E1B8B0A11004BB25E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B9B1B78A03500C1CAE8 /* AFURLResponseSerialization.m */; };
 		36DCE2401B8B0A11004BB25E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B9D1B78A03500C1CAE8 /* AFURLSessionManager.m */; };
 		36DCE2A61B8D602A004BB25E /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */; };
+		36E5569A1C2920E300DACE7C /* PaySandBoxViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E556981C2920E300DACE7C /* PaySandBoxViewController.h */; };
+		36E5569B1C2920E300DACE7C /* PaySandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E556991C2920E300DACE7C /* PaySandBoxViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 		364A5C181B79EFE000C1CAE8 /* BCPaySDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCPaySDK.m; sourceTree = "<group>"; };
 		364BC4D41B5502C700EAFCCE /* libuexBeeCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexBeeCloud.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPPayPlugin.a; path = BCPaySDK/External/UnionPay/libUPPayPlugin.a; sourceTree = "<group>"; };
+		36E556981C2920E300DACE7C /* PaySandBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySandBoxViewController.h; sourceTree = "<group>"; };
+		36E556991C2920E300DACE7C /* PaySandBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySandBoxViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +268,8 @@
 		364A5BAE1B78A03500C1CAE8 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				36E556981C2920E300DACE7C /* PaySandBoxViewController.h */,
+				36E556991C2920E300DACE7C /* PaySandBoxViewController.m */,
 				362FC87A1BF43362007450FF /* BaiduViewController.h */,
 				362FC87B1BF43362007450FF /* BaiduViewController.m */,
 				364A5BAF1B78A03500C1CAE8 /* BCPayObject.h */,
@@ -351,6 +357,7 @@
 				362FC87C1BF43362007450FF /* BaiduViewController.h in Headers */,
 				364A5BE21B78A03500C1CAE8 /* APayAuthInfo.h in Headers */,
 				362FC8801BF43A82007450FF /* NSString+IsValid.h in Headers */,
+				36E5569A1C2920E300DACE7C /* PaySandBoxViewController.h in Headers */,
 				364A5BDF1B78A03500C1CAE8 /* AFURLSessionManager.h in Headers */,
 				364A5BE31B78A03500C1CAE8 /* UPPayPlugin.h in Headers */,
 				364A5BE11B78A03500C1CAE8 /* AlipaySDK.h in Headers */,
@@ -453,6 +460,7 @@
 				362FC87D1BF43362007450FF /* BaiduViewController.m in Sources */,
 				36DCE2381B8B0A10004BB25E /* AFSecurityPolicy.m in Sources */,
 				362FC8811BF43A82007450FF /* NSString+IsValid.m in Sources */,
+				36E5569B1C2920E300DACE7C /* PaySandBoxViewController.m in Sources */,
 				36DCE23A1B8B0A10004BB25E /* AFURLConnectionOperation.m in Sources */,
 				36DCE23C1B8B0A10004BB25E /* AFURLRequestSerialization.m in Sources */,
 				36DCE23E1B8B0A11004BB25E /* AFURLResponseSerialization.m in Sources */,

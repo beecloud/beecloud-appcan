@@ -27,6 +27,11 @@
 @property (nonatomic, strong) NSString *wxAppID;
 
 /**
+ *  YES表示沙箱测试环境
+ */
+@property (nonatomic, assign) BOOL sandbox;
+
+/**
  *  Default network timeout in seconds for all network requests. Change this value via [BeeCloud setNetworkTimeout:];
  */
 @property (nonatomic) NSTimeInterval networkTimeout;
@@ -42,5 +47,12 @@
  *  @return BCCache shared instance.
  */
 + (instancetype)sharedInstance;
+
+/**
+ *  当前模式
+ *
+ *  @return YES表示沙箱测试模式；NO表示生产模式
+ */
++ (BOOL)currentMode;
 
 @end

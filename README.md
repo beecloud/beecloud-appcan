@@ -7,7 +7,6 @@
 使用此模块可轻松实现各个渠道的支付功能。使用之前需要先到[BeeCloud](https://beecloud.cn) 注册认证，并[快速开始](https://beecloud.cn/apply)接入BeeCloud Pay.
 
 </br>
-</br>
 ## **AppCan插件**
 
 > **使用微信支付，请同时勾选AppCan官网公共插件里**uexWeixin**.**
@@ -41,6 +40,20 @@ iOS 9 以后，为了预防APP通过非正常渠道获取用户的某些隐私�
 ```
 
 </br>
+## 沙箱测试
+**在初始化时设置是否切换成沙箱测试模式**  
+> 沙箱测试环境下**不产生**真实的交易
+
+```js
+//init
+var bcData = {
+   bcAppId: "c5d1cba1-5e3f-4ba0-941d-9b0a371fe719",
+   wxAppId: "wxf1aa465362b4c8f1",
+   sandbox: true //设置为true表示打开沙箱测试模式，默认为false(生产模式)
+}
+uexBeeCloud.initBeeCloud(JSON.stringify(bcData));
+```
+
 </br>
 ## **pay**
 
@@ -64,7 +77,8 @@ iOS 9 以后，为了预防APP通过非正常渠道获取用户的某些隐私�
     //init
     var bcData = {
         bcAppId: "c5d1cba1-5e3f-4ba0-941d-9b0a371fe719",
-        wxAppId: "wxf1aa465362b4c8f1"
+        wxAppId: "wxf1aa465362b4c8f1",
+        sandbox: true //设置为true表示打开沙箱测试模式，默认为false(生产模式)
     }
     uexBeeCloud.initBeeCloud(JSON.stringify(bcData));
         

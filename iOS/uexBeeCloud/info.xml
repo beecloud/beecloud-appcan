@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexBeeCloud" version="3.0" build="3">
-        <info>build 3:增加百度</info>
+        uexName="uexBeeCloud" version="3.0" build="4">
+        <info>build 4:添加Sandbox模式</info>
     </plugin>
 </uexplugins>
