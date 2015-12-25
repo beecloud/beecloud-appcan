@@ -294,8 +294,8 @@ public class BCPay extends EUExBase {
 						}
                     } else {
                         //返回后端传回的错误信息
-                    	payCallBack(BCPayResult.BC_ERR_CODE_COMMON, "服务端返回错误信息", 
-	                        			serverRet);
+                    	payCallBack(resultCode.intValue(), String.valueOf(responseMap.get("result_msg")), 
+                    			String.valueOf(responseMap.get("err_detail")));
 			
                     }
                 } else {
