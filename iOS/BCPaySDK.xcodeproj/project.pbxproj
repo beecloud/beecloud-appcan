@@ -28,16 +28,6 @@
 		362FC87D1BF43362007450FF /* BaiduViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FC87B1BF43362007450FF /* BaiduViewController.m */; };
 		362FC8801BF43A82007450FF /* NSString+IsValid.h in Headers */ = {isa = PBXBuildFile; fileRef = 362FC87E1BF43A82007450FF /* NSString+IsValid.h */; };
 		362FC8811BF43A82007450FF /* NSString+IsValid.m in Sources */ = {isa = PBXBuildFile; fileRef = 362FC87F1BF43A82007450FF /* NSString+IsValid.m */; };
-		364A5BCE1B78A03500C1CAE8 /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8B1B78A03500C1CAE8 /* AFHTTPRequestOperation.h */; };
-		364A5BD01B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8D1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h */; };
-		364A5BD21B78A03500C1CAE8 /* AFHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B8F1B78A03500C1CAE8 /* AFHTTPSessionManager.h */; };
-		364A5BD41B78A03500C1CAE8 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B911B78A03500C1CAE8 /* AFNetworking.h */; };
-		364A5BD51B78A03500C1CAE8 /* AFNetworkReachabilityManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B921B78A03500C1CAE8 /* AFNetworkReachabilityManager.h */; };
-		364A5BD71B78A03500C1CAE8 /* AFSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B941B78A03500C1CAE8 /* AFSecurityPolicy.h */; };
-		364A5BD91B78A03500C1CAE8 /* AFURLConnectionOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B961B78A03500C1CAE8 /* AFURLConnectionOperation.h */; };
-		364A5BDB1B78A03500C1CAE8 /* AFURLRequestSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B981B78A03500C1CAE8 /* AFURLRequestSerialization.h */; };
-		364A5BDD1B78A03500C1CAE8 /* AFURLResponseSerialization.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B9A1B78A03500C1CAE8 /* AFURLResponseSerialization.h */; };
-		364A5BDF1B78A03500C1CAE8 /* AFURLSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B9C1B78A03500C1CAE8 /* AFURLSessionManager.h */; };
 		364A5BE11B78A03500C1CAE8 /* AlipaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5B9F1B78A03500C1CAE8 /* AlipaySDK.h */; };
 		364A5BE21B78A03500C1CAE8 /* APayAuthInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5BA01B78A03500C1CAE8 /* APayAuthInfo.h */; };
 		364A5BE31B78A03500C1CAE8 /* UPPayPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5BA21B78A03500C1CAE8 /* UPPayPlugin.h */; };
@@ -63,15 +53,7 @@
 		364A5C161B79D6B700C1CAE8 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C0E1B79D6B700C1CAE8 /* SBJsonParser.h */; };
 		364A5C171B79D6B700C1CAE8 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 364A5C0F1B79D6B700C1CAE8 /* SBJsonWriter.h */; };
 		364A5C191B79EFE000C1CAE8 /* BCPaySDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5C181B79EFE000C1CAE8 /* BCPaySDK.m */; };
-		36DCE22F1B8B0A10004BB25E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B8C1B78A03500C1CAE8 /* AFHTTPRequestOperation.m */; };
-		36DCE2311B8B0A10004BB25E /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B8E1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.m */; };
-		36DCE2331B8B0A10004BB25E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B901B78A03500C1CAE8 /* AFHTTPSessionManager.m */; };
-		36DCE2361B8B0A10004BB25E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B931B78A03500C1CAE8 /* AFNetworkReachabilityManager.m */; };
-		36DCE2381B8B0A10004BB25E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B951B78A03500C1CAE8 /* AFSecurityPolicy.m */; };
-		36DCE23A1B8B0A10004BB25E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B971B78A03500C1CAE8 /* AFURLConnectionOperation.m */; };
-		36DCE23C1B8B0A10004BB25E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B991B78A03500C1CAE8 /* AFURLRequestSerialization.m */; };
-		36DCE23E1B8B0A11004BB25E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B9B1B78A03500C1CAE8 /* AFURLResponseSerialization.m */; };
-		36DCE2401B8B0A11004BB25E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 364A5B9D1B78A03500C1CAE8 /* AFURLSessionManager.m */; };
+		36DB45031C51D8DF00D1DDB2 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */; };
 		36DCE2A61B8D602A004BB25E /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */; };
 		36E5569A1C2920E300DACE7C /* PaySandBoxViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E556981C2920E300DACE7C /* PaySandBoxViewController.h */; };
 		36E5569B1C2920E300DACE7C /* PaySandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E556991C2920E300DACE7C /* PaySandBoxViewController.m */; };
@@ -106,25 +88,6 @@
 		362FC87B1BF43362007450FF /* BaiduViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaiduViewController.m; sourceTree = "<group>"; };
 		362FC87E1BF43A82007450FF /* NSString+IsValid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+IsValid.h"; sourceTree = "<group>"; };
 		362FC87F1BF43A82007450FF /* NSString+IsValid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+IsValid.m"; sourceTree = "<group>"; };
-		364A5B8B1B78A03500C1CAE8 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
-		364A5B8C1B78A03500C1CAE8 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
-		364A5B8D1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		364A5B8E1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
-		364A5B8F1B78A03500C1CAE8 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		364A5B901B78A03500C1CAE8 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		364A5B911B78A03500C1CAE8 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		364A5B921B78A03500C1CAE8 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		364A5B931B78A03500C1CAE8 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		364A5B941B78A03500C1CAE8 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		364A5B951B78A03500C1CAE8 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		364A5B961B78A03500C1CAE8 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		364A5B971B78A03500C1CAE8 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
-		364A5B981B78A03500C1CAE8 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		364A5B991B78A03500C1CAE8 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		364A5B9A1B78A03500C1CAE8 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		364A5B9B1B78A03500C1CAE8 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		364A5B9C1B78A03500C1CAE8 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		364A5B9D1B78A03500C1CAE8 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		364A5B9F1B78A03500C1CAE8 /* AlipaySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
 		364A5BA01B78A03500C1CAE8 /* APayAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
 		364A5BA21B78A03500C1CAE8 /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
@@ -155,6 +118,7 @@
 		364A5C0F1B79D6B700C1CAE8 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		364A5C181B79EFE000C1CAE8 /* BCPaySDK.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCPaySDK.m; sourceTree = "<group>"; };
 		364BC4D41B5502C700EAFCCE /* libuexBeeCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexBeeCloud.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = BCPaySDK/External/AFNetworking/AFNetworking.framework; sourceTree = "<group>"; };
 		36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPPayPlugin.a; path = BCPaySDK/External/UnionPay/libUPPayPlugin.a; sourceTree = "<group>"; };
 		36E556981C2920E300DACE7C /* PaySandBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySandBoxViewController.h; sourceTree = "<group>"; };
 		36E556991C2920E300DACE7C /* PaySandBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySandBoxViewController.m; sourceTree = "<group>"; };
@@ -165,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DB45031C51D8DF00D1DDB2 /* AFNetworking.framework in Frameworks */,
 				36DCE2A61B8D602A004BB25E /* libUPPayPlugin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,25 +164,6 @@
 		364A5B8A1B78A03500C1CAE8 /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				364A5B8B1B78A03500C1CAE8 /* AFHTTPRequestOperation.h */,
-				364A5B8C1B78A03500C1CAE8 /* AFHTTPRequestOperation.m */,
-				364A5B8D1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h */,
-				364A5B8E1B78A03500C1CAE8 /* AFHTTPRequestOperationManager.m */,
-				364A5B8F1B78A03500C1CAE8 /* AFHTTPSessionManager.h */,
-				364A5B901B78A03500C1CAE8 /* AFHTTPSessionManager.m */,
-				364A5B911B78A03500C1CAE8 /* AFNetworking.h */,
-				364A5B921B78A03500C1CAE8 /* AFNetworkReachabilityManager.h */,
-				364A5B931B78A03500C1CAE8 /* AFNetworkReachabilityManager.m */,
-				364A5B941B78A03500C1CAE8 /* AFSecurityPolicy.h */,
-				364A5B951B78A03500C1CAE8 /* AFSecurityPolicy.m */,
-				364A5B961B78A03500C1CAE8 /* AFURLConnectionOperation.h */,
-				364A5B971B78A03500C1CAE8 /* AFURLConnectionOperation.m */,
-				364A5B981B78A03500C1CAE8 /* AFURLRequestSerialization.h */,
-				364A5B991B78A03500C1CAE8 /* AFURLRequestSerialization.m */,
-				364A5B9A1B78A03500C1CAE8 /* AFURLResponseSerialization.h */,
-				364A5B9B1B78A03500C1CAE8 /* AFURLResponseSerialization.m */,
-				364A5B9C1B78A03500C1CAE8 /* AFURLSessionManager.h */,
-				364A5B9D1B78A03500C1CAE8 /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
 			sourceTree = "<group>";
@@ -327,6 +273,7 @@
 		36DCE2A41B8D600B004BB25E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */,
 				36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */,
 			);
 			name = Frameworks;
@@ -346,31 +293,21 @@
 				364A5BEC1B78A03500C1CAE8 /* BCPayObject.h in Headers */,
 				364A5C101B79D6B700C1CAE8 /* JSON.h in Headers */,
 				364A5C171B79D6B700C1CAE8 /* SBJsonWriter.h in Headers */,
-				364A5BDB1B78A03500C1CAE8 /* AFURLRequestSerialization.h in Headers */,
-				364A5BD01B78A03500C1CAE8 /* AFHTTPRequestOperationManager.h in Headers */,
-				364A5BD51B78A03500C1CAE8 /* AFNetworkReachabilityManager.h in Headers */,
-				364A5BD91B78A03500C1CAE8 /* AFURLConnectionOperation.h in Headers */,
 				362FC8781BF42D6B007450FF /* NSDictionary+Utils.h in Headers */,
 				364A5C021B79C4AB00C1CAE8 /* EUtility.h in Headers */,
-				364A5BCE1B78A03500C1CAE8 /* AFHTTPRequestOperation.h in Headers */,
 				364A5C141B79D6B700C1CAE8 /* SBJSON.h in Headers */,
 				362FC87C1BF43362007450FF /* BaiduViewController.h in Headers */,
 				364A5BE21B78A03500C1CAE8 /* APayAuthInfo.h in Headers */,
 				362FC8801BF43A82007450FF /* NSString+IsValid.h in Headers */,
 				36E5569A1C2920E300DACE7C /* PaySandBoxViewController.h in Headers */,
-				364A5BDF1B78A03500C1CAE8 /* AFURLSessionManager.h in Headers */,
 				364A5BE31B78A03500C1CAE8 /* UPPayPlugin.h in Headers */,
 				364A5BE11B78A03500C1CAE8 /* AlipaySDK.h in Headers */,
-				364A5BD71B78A03500C1CAE8 /* AFSecurityPolicy.h in Headers */,
 				364A5BE61B78A03500C1CAE8 /* WXApiObject.h in Headers */,
 				364A5BE51B78A03500C1CAE8 /* WXApi.h in Headers */,
 				364A5C001B79C4AB00C1CAE8 /* EUExBase.h in Headers */,
 				364A5BE41B78A03500C1CAE8 /* UPPayPluginDelegate.h in Headers */,
 				364A5C161B79D6B700C1CAE8 /* SBJsonParser.h in Headers */,
-				364A5BD21B78A03500C1CAE8 /* AFHTTPSessionManager.h in Headers */,
 				364A5C121B79D6B700C1CAE8 /* NSObject+SBJSON.h in Headers */,
-				364A5BDD1B78A03500C1CAE8 /* AFURLResponseSerialization.h in Headers */,
-				364A5BD41B78A03500C1CAE8 /* AFNetworking.h in Headers */,
 				364A5C051B79C51E00C1CAE8 /* BeeCloud.h in Headers */,
 				364A5C011B79C4AB00C1CAE8 /* EUExBaseDefine.h in Headers */,
 			);
@@ -453,18 +390,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DCE22F1B8B0A10004BB25E /* AFHTTPRequestOperation.m in Sources */,
-				36DCE2311B8B0A10004BB25E /* AFHTTPRequestOperationManager.m in Sources */,
-				36DCE2331B8B0A10004BB25E /* AFHTTPSessionManager.m in Sources */,
-				36DCE2361B8B0A10004BB25E /* AFNetworkReachabilityManager.m in Sources */,
 				362FC87D1BF43362007450FF /* BaiduViewController.m in Sources */,
-				36DCE2381B8B0A10004BB25E /* AFSecurityPolicy.m in Sources */,
 				362FC8811BF43A82007450FF /* NSString+IsValid.m in Sources */,
 				36E5569B1C2920E300DACE7C /* PaySandBoxViewController.m in Sources */,
-				36DCE23A1B8B0A10004BB25E /* AFURLConnectionOperation.m in Sources */,
-				36DCE23C1B8B0A10004BB25E /* AFURLRequestSerialization.m in Sources */,
-				36DCE23E1B8B0A11004BB25E /* AFURLResponseSerialization.m in Sources */,
-				36DCE2401B8B0A11004BB25E /* AFURLSessionManager.m in Sources */,
 				364A5C191B79EFE000C1CAE8 /* BCPaySDK.m in Sources */,
 				362FC8791BF42D6B007450FF /* NSDictionary+Utils.m in Sources */,
 				364A5BEB1B78A03500C1CAE8 /* BCPayUtil.m in Sources */,
@@ -534,7 +462,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -570,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -583,6 +511,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/External/BeeCloudSDK",
+					"$(PROJECT_DIR)/BCPaySDK/External/AFNetworking",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
@@ -604,6 +533,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/External/BeeCloudSDK",
+					"$(PROJECT_DIR)/BCPaySDK/External/AFNetworking",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";

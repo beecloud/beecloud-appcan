@@ -122,12 +122,12 @@
         parameters[@"return_url"] = @"http://payservice.beecloud.cn/apicloud/baidu/return_url.php";
     }
     
-    AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
+    AFHTTPSessionManager *manager = [BCPayUtil getAFHTTPSessionManager];
     
     __block NSTimeInterval tStart = [NSDate timeIntervalSinceReferenceDate];
     
     [manager POST:[BCPayUtil getBestHostWithFormat:kRestApiPay] parameters:parameters
-          success:^(AFHTTPRequestOperation *operation, id response) {
+          success:^(NSURLSessionTask *task, id response) {
               BCPayLog(@"wechat end time = %f", [NSDate timeIntervalSinceReferenceDate] - tStart);
               NSDictionary *resp = (NSDictionary *)response;
               if ([[resp objectForKey:kKeyResponseResultCode] integerValue] != 0) {
@@ -156,7 +156,7 @@
                       [self doPayAction:req.channel source:dic];
                   }
               }
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+          } failure:^(NSURLSessionTask *operation, NSError *error) {
               [self doErrorResponse:kNetWorkError errDetail:kNetWorkError];
           }];
 }
@@ -247,12 +247,12 @@
     
     NSMutableDictionary *preparepara = [BCPayUtil getWrappedParametersForGetRequest:parameters];
     
-    AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
+    AFHTTPSessionManager *manager = [BCPayUtil getAFHTTPSessionManager];
     
     __block NSTimeInterval tStart = [NSDate timeIntervalSinceReferenceDate];
     
     [manager GET:reqUrl parameters:preparepara
-         success:^(AFHTTPRequestOperation *operation, id response) {
+         success:^(NSURLSessionTask *task, id response) {
              BCPayLog(@"query end time = %f", [NSDate timeIntervalSinceReferenceDate] - tStart);
              NSDictionary *resp = (NSDictionary *)response;
              if ([resp objectForKey:kKeyResponseResultCode] != 0) {
@@ -262,7 +262,7 @@
              } else {
                  [self doQueryResponse:(NSDictionary *)response];
              }
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
              [self doErrorResponse:kNetWorkError errDetail:kNetWorkError];
          }];
 }
@@ -296,12 +296,11 @@
     
     NSMutableDictionary *preparepara = [BCPayUtil getWrappedParametersForGetRequest:parameters];
     
-    AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
+    AFHTTPSessionManager *manager = [BCPayUtil getAFHTTPSessionManager];
     
-    [manager GET:[BCPayUtil getBestHostWithFormat:kRestApiRefundState] parameters:preparepara
-         success:^(AFHTTPRequestOperation *operation, id response) {
+    [manager GET:[BCPayUtil getBestHostWithFormat:kRestApiRefundState] parameters:preparepara success:^(NSURLSessionTask *task, id response) {
              [self doQueryRefundStatus:(NSDictionary *)response];
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
              [self doErrorResponse:kNetWorkError errDetail:kNetWorkError];
          }];
 }

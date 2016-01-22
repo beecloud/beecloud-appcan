@@ -184,13 +184,13 @@
     
     NSString *host = [NSString stringWithFormat:@"%@%@/%@", [BCPayUtil getBestHostWithFormat:kRestApiSandboxNotify], [BCPayCache sharedInstance].appId, _bcId];
     NSLog(@"sandboxPay id = %@", _bcId);
-    AFHTTPRequestOperationManager *manager = [BCPayUtil getAFHTTPRequestOperationManager];
+    AFHTTPSessionManager *manager = [BCPayUtil getAFHTTPSessionManager];
     __weak PaySandboxViewController *weakSelf = self;
     [manager GET:host parameters:nil
-         success:^(AFHTTPRequestOperation *operation, id response) {
+         success:^(NSURLSessionTask *task, id response) {
              BCPayLog(@"resp = %@", response);
              [weakSelf doNotifyResponse:(NSDictionary *)response];
-         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         } failure:^(NSURLSessionTask *operation, NSError *error) {
              [loading stopAnimating];
              [self doErrorResponse:kNetWorkError errDetail:kNetWorkError];
          }];

@@ -13,8 +13,8 @@
 
 @implementation BCPayUtil
 
-+ (AFHTTPRequestOperationManager *)getAFHTTPRequestOperationManager {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
++ (AFHTTPSessionManager *)getAFHTTPSessionManager {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.securityPolicy.allowInvalidCertificates = NO;
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     return manager;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexBeeCloud" version="3.0" build="4">
-        <info>build 4:添加Sandbox模式</info>
+        uexName="uexBeeCloud" version="3.0" build="5">
+        <info>build 5:使用AFNetworking.framework(3.0)替代源文件引用;支持iOS 7.0</info>
     </plugin>
 </uexplugins>
