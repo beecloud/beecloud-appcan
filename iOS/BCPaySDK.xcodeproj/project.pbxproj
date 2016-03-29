@@ -153,19 +153,11 @@
 			isa = PBXGroup;
 			children = (
 				364A5C071B79D6B700C1CAE8 /* JSON */,
-				364A5B8A1B78A03500C1CAE8 /* AFNetworking */,
 				364A5B9E1B78A03500C1CAE8 /* AliPay */,
 				364A5BA11B78A03500C1CAE8 /* UnionPay */,
 				364A5BA41B78A03500C1CAE8 /* WXPay */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		364A5B8A1B78A03500C1CAE8 /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 		364A5B9E1B78A03500C1CAE8 /* AliPay */ = {

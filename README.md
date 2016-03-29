@@ -40,10 +40,12 @@ iOS 9 以后，为了预防APP通过非正常渠道获取用户的某些隐私�
 ```
 
 </br>
-## 配置异步回调地址webhook url
-支付成功后，BeeCloud将向用户在BeeCloud的"控制台->设置->Webhook"中指定的URL发送状态数据。用户可以根据该状态数据，结合自身系统内记录的订单信息做相应的处理。
+## 配置异步通知地址webhook url
+支付成功后，BeeCloud将向用户在BeeCloud的"控制台->设置->Webhook"中指定的URL发送状态数据。用户可以根据该状态数据，结合自身系统内记录的订单信息做相应的处理。[查看webhook文档](https://beecloud.cn/doc/?index=11)
 
->服务器间的交互,不像页面跳转同步通知(REST Api中bill的参数return_url指定)可以在页面上显示出来，这种交互方式是通过后台通信来完成的，对用户是不可见的。
+>如果在BeeCloud控制台配置了webhook url，用户支付成功后，BeeCloud会向webhook url推送订单支付成功消息。 未配置webhook url，BeeCloud不会发送异步通知。  
+>服务器间的交互,不像页面跳转同步通知(REST Api中bill的参数return_url指定)可以在页面上显示出来，这种交互方式是通过后台通信来完成的，对用户是不可见的。  
+
 
 </br>
 ## 沙箱测试
