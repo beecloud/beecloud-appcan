@@ -11,7 +11,7 @@
 
 > **使用微信支付，请同时勾选AppCan官网公共插件里**uexWeixin**.**
 
-`uexBeeCloud`iOS插件需要用户在`config.xml`配置使用，示例配置代码如下:
+`uexBeeCloud`插件需要用户在`config.xml`配置使用，示例配置代码如下:
 
 ```
 <config desc="uexBeeCloud" type="URLSCHEME">
