@@ -20,27 +20,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+
 #import <Availability.h>
+#import <TargetConditionals.h>
 
 #ifndef _AFNETWORKING_
-    #define _AFNETWORKING_
+#define _AFNETWORKING_
 
-    #import "AFURLRequestSerialization.h"
-    #import "AFURLResponseSerialization.h"
-    #import "AFSecurityPolicy.h"
+#import <AFNetworking/AFURLRequestSerialization.h>
+#import <AFNetworking/AFURLResponseSerialization.h>
+#import <AFNetworking/AFSecurityPolicy.h>
+
 #if !TARGET_OS_WATCH
-    #import "AFNetworkReachabilityManager.h"
-    #import "AFURLConnectionOperation.h"
-    #import "AFHTTPRequestOperation.h"
-    #import "AFHTTPRequestOperationManager.h"
+#import <AFNetworking/AFNetworkReachabilityManager.h>
 #endif
 
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-      ( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) || \
-       TARGET_OS_WATCH )
-    #import "AFURLSessionManager.h"
-    #import "AFHTTPSessionManager.h"
+#import <AFNetworking/AFURLSessionManager.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
+
+#if TARGET_OS_IOS || TARGET_OS_TV
+#import <AFNetworking/AFAutoPurgingImageCache.h>
+#import <AFNetworking/AFImageDownloader.h>
+#import <AFNetworking/UIActivityIndicatorView+AFNetworking.h>
+#import <AFNetworking/UIButton+AFNetworking.h>
+#import <AFNetworking/UIImage+AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
+#import <AFNetworking/UIProgressView+AFNetworking.h>
 #endif
+
+#if TARGET_OS_IOS
+#import <AFNetworking/AFNetworkActivityIndicatorManager.h>
+#import <AFNetworking/UIRefreshControl+AFNetworking.h>
+#import <AFNetworking/UIWebView+AFNetworking.h>
+#endif
+
 
 #endif /* _AFNETWORKING_ */
