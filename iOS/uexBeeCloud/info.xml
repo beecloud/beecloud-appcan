@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexBeeCloud" version="3.0" build="5">
-        <info>build 5:使用AFNetworking.framework(3.0)替代源文件引用;支持iOS 7.0</info>
+        uexName="uexBeeCloud" version="3.0.1" build="1">
+        <info>1:更新AFNetworking.framework</info>
+            <build>0:使用AFNetworking.framework(3.0)替代源文件引用;支持iOS 7.0</build>
     </plugin>
 </uexplugins>
