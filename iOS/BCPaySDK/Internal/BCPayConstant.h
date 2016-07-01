@@ -46,8 +46,10 @@ static NSString * const kRestApiSandboxNotify = @"%@%@/notify/";
 static NSString * const PayChannelWxApp = @"WX_APP";//微信APP
 static NSString * const PayChannelAliApp = @"ALI_APP";//支付宝APP
 static NSString * const PayChannelUnApp = @"UN_APP";//银联APP
+static NSString * const PayChannelApple = @"APPLE";//银联APP
 static NSString * const PayChannelBaiduApp = @"BD_APP";//
 static NSString * const PayChannelBaiduWap = @"BD_WAP";
+static NSString * const PayChannelBCApp = @"BC_APP";
 
 /**
  *  BCPay URL type for handling URLs.

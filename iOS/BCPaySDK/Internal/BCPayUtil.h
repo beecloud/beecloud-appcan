@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <AFNetworking/AFNetworking.h>
+#import "BCNetworking.h"
 #import "BCPayConstant.h"
 #import "BCPayCache.h"
 #import "NSString+IsValid.h"
@@ -22,7 +22,7 @@
 /*!
  A wrapper for AFHTTPSessionManager.
  */
-+ (AFHTTPSessionManager *)getAFHTTPSessionManager;
++ (BCHTTPSessionManager *)getBCHTTPSessionManager;
 
 /**
  *  Get wrapped parameters in the format of "para" to a map for GET REST APIs.

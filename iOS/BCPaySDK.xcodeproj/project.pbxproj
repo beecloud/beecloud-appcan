@@ -57,6 +57,9 @@
 		36DCE2A61B8D602A004BB25E /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */; };
 		36E5569A1C2920E300DACE7C /* PaySandBoxViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E556981C2920E300DACE7C /* PaySandBoxViewController.h */; };
 		36E5569B1C2920E300DACE7C /* PaySandBoxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36E556991C2920E300DACE7C /* PaySandBoxViewController.m */; };
+		36F1916E1D23A0910054E9B8 /* libUPAPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36F1916D1D23A0910054E9B8 /* libUPAPayPlugin.a */; };
+		36F191741D23A09F0054E9B8 /* UPAPayPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F191711D23A09F0054E9B8 /* UPAPayPlugin.h */; };
+		36F191751D23A09F0054E9B8 /* UPAPayPluginDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 36F191721D23A09F0054E9B8 /* UPAPayPluginDelegate.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,9 @@
 		36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPPayPlugin.a; path = BCPaySDK/External/UnionPay/libUPPayPlugin.a; sourceTree = "<group>"; };
 		36E556981C2920E300DACE7C /* PaySandBoxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySandBoxViewController.h; sourceTree = "<group>"; };
 		36E556991C2920E300DACE7C /* PaySandBoxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySandBoxViewController.m; sourceTree = "<group>"; };
+		36F1916D1D23A0910054E9B8 /* libUPAPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPAPayPlugin.a; path = BCPaySDK/External/Apple/libUPAPayPlugin.a; sourceTree = "<group>"; };
+		36F191711D23A09F0054E9B8 /* UPAPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPlugin.h; sourceTree = "<group>"; };
+		36F191721D23A09F0054E9B8 /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F1916E1D23A0910054E9B8 /* libUPAPayPlugin.a in Frameworks */,
 				36DB45031C51D8DF00D1DDB2 /* AFNetworking.framework in Frameworks */,
 				36DCE2A61B8D602A004BB25E /* libUPPayPlugin.a in Frameworks */,
 			);
@@ -152,6 +159,7 @@
 		364A5B891B78A03500C1CAE8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				36F1916F1D23A09F0054E9B8 /* Apple */,
 				364A5C071B79D6B700C1CAE8 /* JSON */,
 				364A5B9E1B78A03500C1CAE8 /* AliPay */,
 				364A5BA11B78A03500C1CAE8 /* UnionPay */,
@@ -265,10 +273,20 @@
 		36DCE2A41B8D600B004BB25E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36F1916D1D23A0910054E9B8 /* libUPAPayPlugin.a */,
 				36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */,
 				36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36F1916F1D23A09F0054E9B8 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				36F191711D23A09F0054E9B8 /* UPAPayPlugin.h */,
+				36F191721D23A09F0054E9B8 /* UPAPayPluginDelegate.h */,
+			);
+			path = Apple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +305,7 @@
 				364A5C171B79D6B700C1CAE8 /* SBJsonWriter.h in Headers */,
 				362FC8781BF42D6B007450FF /* NSDictionary+Utils.h in Headers */,
 				364A5C021B79C4AB00C1CAE8 /* EUtility.h in Headers */,
+				36F191741D23A09F0054E9B8 /* UPAPayPlugin.h in Headers */,
 				364A5C141B79D6B700C1CAE8 /* SBJSON.h in Headers */,
 				362FC87C1BF43362007450FF /* BaiduViewController.h in Headers */,
 				364A5BE21B78A03500C1CAE8 /* APayAuthInfo.h in Headers */,
@@ -297,6 +316,7 @@
 				364A5BE61B78A03500C1CAE8 /* WXApiObject.h in Headers */,
 				364A5BE51B78A03500C1CAE8 /* WXApi.h in Headers */,
 				364A5C001B79C4AB00C1CAE8 /* EUExBase.h in Headers */,
+				36F191751D23A09F0054E9B8 /* UPAPayPluginDelegate.h in Headers */,
 				364A5BE41B78A03500C1CAE8 /* UPPayPluginDelegate.h in Headers */,
 				364A5C161B79D6B700C1CAE8 /* SBJsonParser.h in Headers */,
 				364A5C121B79D6B700C1CAE8 /* NSObject+SBJSON.h in Headers */,
@@ -332,7 +352,7 @@
 		364BC4CC1B5502C700EAFCCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = BeeCloud;
 				TargetAttributes = {
 					364A5BF51B799D6E00C1CAE8 = {
@@ -439,6 +459,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -512,6 +533,7 @@
 					"$(PROJECT_DIR)/External/UnionPaySDK",
 					"$(PROJECT_DIR)/External/WeChatSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/UnionPay",
+					"$(PROJECT_DIR)/BCPaySDK/External/Apple",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexBeeCloud;
@@ -534,6 +556,7 @@
 					"$(PROJECT_DIR)/External/UnionPaySDK",
 					"$(PROJECT_DIR)/External/WeChatSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/UnionPay",
+					"$(PROJECT_DIR)/BCPaySDK/External/Apple",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = uexBeeCloud;
