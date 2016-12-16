@@ -80,19 +80,6 @@
     [self performSelectorOnMainThread:@selector(callbackJsonWithName:) withObject:@{@"cbIsWxAppInstalled": resp} waitUntilDone:NO];
 }
 
-- (void)canMakeApplePayments:(NSMutableArray *)inArguments {
-    if ([inArguments isKindOfClass:[NSMutableArray class]] && inArguments.count > 0) {
-        SBJsonParser *jsonParser = [[SBJsonParser alloc] init];
-        NSMutableDictionary *params = [jsonParser objectWithString:[inArguments lastObject]];
-        
-        NSDictionary *resp = @{@"status": @([BCPay canMakeApplePayments:[params integerValueForKey:@"cardType" defaultValue:0]])};
-        [self performSelectorOnMainThread:@selector(callbackJsonWithName:) withObject:@{@"cbCanMakeApplePayments": resp} waitUntilDone:NO];
-    } else {
-        NSDictionary *resp = @{@"status": @NO};
-        [self performSelectorOnMainThread:@selector(callbackJsonWithName:) withObject:@{@"cbCanMakeApplePayments": resp} waitUntilDone:NO];
-    }
-}
-
 - (void)onBeeCloudResp:(id)resp {
     [self performSelectorOnMainThread:@selector(callbackJsonWithName:) withObject:@{@"cbPay": resp} waitUntilDone:NO];
 }
@@ -123,6 +110,10 @@
 }
 
 + (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [BCPay handleOpenUrl:url];
+}
+
++ (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
     return [BCPay handleOpenUrl:url];
 }
 

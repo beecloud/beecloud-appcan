@@ -11,14 +11,13 @@
 #import "BCPayUtil.h"
 #import "WXApi.h"
 #import "AlipaySDK.h"
-#import "UPPayPlugin.h"
-#import "UPAPayPlugin.h"
+#import "UPPaymentControl.h"
 #import "NSDictionary+Utils.h"
 #import "PaySandBoxViewController.h"
 #import <PassKit/PassKit.h>
 
 
-@interface BCPay ()<WXApiDelegate, UPPayPluginDelegate, UPAPayPluginDelegate>
+@interface BCPay ()<WXApiDelegate>
 
 @property (nonatomic, weak) id<BeeCloudDelegate> deleagte;
 
@@ -63,6 +62,10 @@
             [instance processOrderForAliPay:resultDic];
         }];
         return YES;
+    } else if (BCPayUrlUnionPay == [BCPay getUrlType:url]) {
+        [[UPPaymentControl defaultControl] handlePaymentResult:url completeBlock:^(NSString *code, NSDictionary *data) {
+            [[BCPay sharedInstance] UPPayPluginResult:code];
+        }];
     }
     return NO;
 }
@@ -76,8 +79,10 @@
         return BCPayUrlAlipay;
     else if ([url.scheme hasPrefix:@"wx"] && [url.host isEqualToString:@"pay"])
         return BCPayUrlWeChat;
-    else
-        return BCPayUrlUnknown;
+    else if ([url.host isEqualToString:@"uppayresult"]) {
+        return BCPayUrlUnionPay;
+    }
+    return BCPayUrlUnknown;
 }
 
 + (NSString *)getBCApiVersion {
@@ -161,9 +166,10 @@
                         }];
                     });
                   } else {
-                      if ([req.channel isEqualToString: PayChannelAliApp]) {
+                      if ([req.channel isEqualToString: PayChannelAliApp] || [req.channel isEqualToString:PayChannelUnApp]) {
                           [dic setObject:req.scheme forKey:@"scheme"];
-                      } else if ([req.channel isEqualToString: PayChannelUnApp] || [req.channel isEqualToString: PayChannelBCApp] || [req.channel isEqualToString: PayChannelApple]) {
+                      }
+                      if ([req.channel isEqualToString: PayChannelUnApp] || [req.channel isEqualToString: PayChannelBCApp]) {
                           [dic setObject:req.viewController forKey:@"viewController"];
                       }
                       [self doPayAction:req.channel source:dic];
@@ -184,8 +190,6 @@
             [self doAliPay:dic];
         } else if ([channel isEqualToString:PayChannelUnApp] || [channel isEqualToString:PayChannelBCApp]) {
             [self doUnionPay:dic];
-        } else if ([channel isEqualToString:PayChannelApple]) {
-            [self doApplePay:dic];
         } else if ([channel isEqualToString:PayChannelBaiduWap]) {
             if (_deleagte && [_deleagte respondsToSelector:@selector(onBeeCloudBaidu:)]) {
                 [_deleagte onBeeCloudBaidu:[dic stringValueForKey:@"url" defaultValue:@""]];
@@ -222,86 +226,12 @@
 }
 
 - (void)doUnionPay:(NSMutableDictionary *)dic {
-    NSString *tn = [dic objectForKey:@"tn"];
+    NSString *tn = [dic stringValueForKey:@"tn" defaultValue:@""];
+    NSString *scheme = [dic stringValueForKey:@"scheme" defaultValue:@""];
     BCPayLog(@"Union Pay Start %@", dic);
     dispatch_async(dispatch_get_main_queue(), ^{
-        [UPPayPlugin startPay:tn mode:@"00" viewController:(UIViewController *)[dic objectForKey:@"viewController"] delegate:[BCPay sharedInstance]];
+        [[UPPaymentControl defaultControl] startPay:tn fromScheme:scheme mode:@"00" viewController:dic[@"viewController"]];
     });
-}
-
-+ (BOOL)canMakeApplePayments:(NSUInteger)cardType {
-    BOOL status = NO;
-    switch(cardType) {
-        case 0:
-        {
-            status = [PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:@[PKPaymentNetworkChinaUnionPay]] ;
-            break;
-        }
-        case 1:
-        {
-            PKMerchantCapability merchantCapabilities = PKMerchantCapability3DS | PKMerchantCapabilityEMV | PKMerchantCapabilityDebit;
-            status = [PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:@[PKPaymentNetworkChinaUnionPay] capabilities:merchantCapabilities];
-            break;
-        }
-        case 2:
-        {
-            PKMerchantCapability merchantCapabilities = PKMerchantCapability3DS | PKMerchantCapabilityEMV | PKMerchantCapabilityCredit;
-            status = [PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:@[PKPaymentNetworkChinaUnionPay] capabilities:merchantCapabilities];
-            break;
-        }
-        default:
-            status = [PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:@[PKPaymentNetworkChinaUnionPay]];
-            break;
-    }
-    return status;
-}
-
-- (BOOL)doApplePay:(NSMutableDictionary *)dic {
-    if ([BCPay canMakeApplePayments:[dic integerValueForKey:@"cardType" defaultValue:0]]) {
-        NSString *tn = [dic stringValueForKey:@"tn" defaultValue:@""];
-        NSLog(@"apple tn = %@", dic);
-        if (tn.isValid) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [UPAPayPlugin startPay:tn mode:@"00" viewController:dic[@"viewController"] delegate:[BCPay sharedInstance] andAPMechantID:dic[@"apple_mer_id"]];
-            });
-            return YES;
-        }
-    }
-    return NO;
-}
-
-#pragma mark - Implementation ApplePayDelegate
-
-- (void)UPAPayPluginResult:(UPPayResult *)payResult {
-    int errcode = BCErrCodeFail;
-    NSString *strMsg = @"支付失败";
-    
-    switch (payResult.paymentResultStatus) {
-        case UPPaymentResultStatusSuccess: {
-            strMsg = @"支付成功";
-            errcode = BCSuccess;
-            break;
-        }
-        case UPPaymentResultStatusFailure:
-            break;
-        case UPPaymentResultStatusCancel: {
-            strMsg = @"支付取消";
-            break;
-        }
-        case UPPaymentResultStatusUnknownCancel: {
-            strMsg = @"支付取消,交易已发起,状态不确定,商户需查询商户后台确认支付状态";
-            break;
-        }
-    }
-    
-    NSMutableDictionary *dic =[NSMutableDictionary dictionaryWithCapacity:10];
-    dic[kKeyResponseResultCode] = @(errcode);
-    dic[kKeyResponseResultMsg] = strMsg;
-    dic[kKeyResponseErrDetail] = strMsg;
-    
-    if (_deleagte && [_deleagte respondsToSelector:@selector(onBeeCloudResp:)]) {
-        [_deleagte onBeeCloudResp:dic];
-    }
 }
 
 #pragma mark Query Bills/Refunds
@@ -376,7 +306,7 @@
     if (!channel.isValid) {
         return NO;
     }
-    NSArray *channelList = @[PayChannelWxApp, PayChannelAliApp, PayChannelUnApp, PayChannelBaiduWap, PayChannelBaiduApp, PayChannelBCApp, PayChannelApple];
+    NSArray *channelList = @[PayChannelWxApp, PayChannelAliApp, PayChannelUnApp, PayChannelBaiduWap, PayChannelBaiduApp, PayChannelBCApp];
     return [channelList containsObject:channel];
 }
 

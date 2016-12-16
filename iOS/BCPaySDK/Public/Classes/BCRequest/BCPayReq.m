@@ -21,7 +21,6 @@
         self.billno = @"";
         self.scheme = @"";
         self.viewController = nil;
-        self.cardType = 0;
     }
     return self;
 }

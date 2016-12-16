@@ -29,9 +29,6 @@
 		363A42201D2643D2004E66EF /* EUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41C71D2643D2004E66EF /* EUtility.h */; };
 		363A42211D2643D2004E66EF /* AlipaySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41CB1D2643D2004E66EF /* AlipaySDK.h */; };
 		363A42221D2643D2004E66EF /* APayAuthInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41CC1D2643D2004E66EF /* APayAuthInfo.h */; };
-		363A42231D2643D2004E66EF /* libUPAPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 363A41CE1D2643D2004E66EF /* libUPAPayPlugin.a */; };
-		363A42241D2643D2004E66EF /* UPAPayPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41CF1D2643D2004E66EF /* UPAPayPlugin.h */; };
-		363A42251D2643D2004E66EF /* UPAPayPluginDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D01D2643D2004E66EF /* UPAPayPluginDelegate.h */; };
 		363A42261D2643D2004E66EF /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D21D2643D2004E66EF /* JSON.h */; };
 		363A42271D2643D2004E66EF /* JSONParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D31D2643D2004E66EF /* JSONParser.h */; };
 		363A42281D2643D2004E66EF /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D41D2643D2004E66EF /* NSObject+SBJSON.h */; };
@@ -40,9 +37,6 @@
 		363A422B1D2643D2004E66EF /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D71D2643D2004E66EF /* SBJsonBase.h */; };
 		363A422C1D2643D2004E66EF /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D81D2643D2004E66EF /* SBJsonParser.h */; };
 		363A422D1D2643D2004E66EF /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41D91D2643D2004E66EF /* SBJsonWriter.h */; };
-		363A422E1D2643D2004E66EF /* libUPPayPlugin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 363A41DB1D2643D2004E66EF /* libUPPayPlugin.a */; };
-		363A422F1D2643D2004E66EF /* UPPayPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41DC1D2643D2004E66EF /* UPPayPlugin.h */; };
-		363A42301D2643D2004E66EF /* UPPayPluginDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41DD1D2643D2004E66EF /* UPPayPluginDelegate.h */; };
 		363A42321D2643D2004E66EF /* WXApi.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41E01D2643D2004E66EF /* WXApi.h */; };
 		363A42331D2643D2004E66EF /* WXApiObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41E11D2643D2004E66EF /* WXApiObject.h */; };
 		363A42341D2643D2004E66EF /* BCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A41E51D2643D2004E66EF /* BCHTTPSessionManager.h */; };
@@ -94,7 +88,8 @@
 		363A42621D2643D2004E66EF /* BCQueryBillResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 363A42191D2643D2004E66EF /* BCQueryBillResult.m */; };
 		363A42631D2643D2004E66EF /* BCQueryRefundResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 363A421A1D2643D2004E66EF /* BCQueryRefundResult.h */; };
 		363A42641D2643D2004E66EF /* BCQueryRefundResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 363A421B1D2643D2004E66EF /* BCQueryRefundResult.m */; };
-		363A42651D264468004E66EF /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 363A41DF1D2643D2004E66EF /* libWeChatSDK.a */; };
+		36E128B21E03D14D0082573A /* libPaymentControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E128B01E03D14D0082573A /* libPaymentControl.a */; };
+		36E128B31E03D14D0082573A /* UPPaymentControl.h in Headers */ = {isa = PBXBuildFile; fileRef = 36E128B11E03D14D0082573A /* UPPaymentControl.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,9 +122,6 @@
 		363A41C71D2643D2004E66EF /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
 		363A41CB1D2643D2004E66EF /* AlipaySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipaySDK.h; sourceTree = "<group>"; };
 		363A41CC1D2643D2004E66EF /* APayAuthInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APayAuthInfo.h; sourceTree = "<group>"; };
-		363A41CE1D2643D2004E66EF /* libUPAPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPAPayPlugin.a; sourceTree = "<group>"; };
-		363A41CF1D2643D2004E66EF /* UPAPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPlugin.h; sourceTree = "<group>"; };
-		363A41D01D2643D2004E66EF /* UPAPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPAPayPluginDelegate.h; sourceTree = "<group>"; };
 		363A41D21D2643D2004E66EF /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		363A41D31D2643D2004E66EF /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		363A41D41D2643D2004E66EF /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
@@ -138,10 +130,6 @@
 		363A41D71D2643D2004E66EF /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
 		363A41D81D2643D2004E66EF /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
 		363A41D91D2643D2004E66EF /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		363A41DB1D2643D2004E66EF /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUPPayPlugin.a; sourceTree = "<group>"; };
-		363A41DC1D2643D2004E66EF /* UPPayPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPlugin.h; sourceTree = "<group>"; };
-		363A41DD1D2643D2004E66EF /* UPPayPluginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPayPluginDelegate.h; sourceTree = "<group>"; };
-		363A41DF1D2643D2004E66EF /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		363A41E01D2643D2004E66EF /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		363A41E11D2643D2004E66EF /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		363A41E21D2643D2004E66EF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -195,9 +183,8 @@
 		363A421A1D2643D2004E66EF /* BCQueryRefundResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCQueryRefundResult.h; sourceTree = "<group>"; };
 		363A421B1D2643D2004E66EF /* BCQueryRefundResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCQueryRefundResult.m; sourceTree = "<group>"; };
 		364BC4D41B5502C700EAFCCE /* libuexBeeCloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexBeeCloud.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = BCPaySDK/External/AFNetworking/AFNetworking.framework; sourceTree = "<group>"; };
-		36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPPayPlugin.a; path = BCPaySDK/External/UnionPay/libUPPayPlugin.a; sourceTree = "<group>"; };
-		36F1916D1D23A0910054E9B8 /* libUPAPayPlugin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUPAPayPlugin.a; path = BCPaySDK/External/Apple/libUPAPayPlugin.a; sourceTree = "<group>"; };
+		36E128B01E03D14D0082573A /* libPaymentControl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPaymentControl.a; sourceTree = "<group>"; };
+		36E128B11E03D14D0082573A /* UPPaymentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UPPaymentControl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,9 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				363A42651D264468004E66EF /* libWeChatSDK.a in Frameworks */,
-				363A422E1D2643D2004E66EF /* libUPPayPlugin.a in Frameworks */,
-				363A42231D2643D2004E66EF /* libUPAPayPlugin.a in Frameworks */,
+				36E128B21E03D14D0082573A /* libPaymentControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,21 +226,12 @@
 		363A41C81D2643D2004E66EF /* External */ = {
 			isa = PBXGroup;
 			children = (
-				363A41C91D2643D2004E66EF /* AFNetworking */,
 				363A41CA1D2643D2004E66EF /* AliPay */,
-				363A41CD1D2643D2004E66EF /* Apple */,
 				363A41D11D2643D2004E66EF /* JSON */,
 				363A41DA1D2643D2004E66EF /* UnionPay */,
 				363A41DE1D2643D2004E66EF /* WXPay */,
 			);
 			path = External;
-			sourceTree = "<group>";
-		};
-		363A41C91D2643D2004E66EF /* AFNetworking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AFNetworking;
 			sourceTree = "<group>";
 		};
 		363A41CA1D2643D2004E66EF /* AliPay */ = {
@@ -265,16 +241,6 @@
 				363A41CC1D2643D2004E66EF /* APayAuthInfo.h */,
 			);
 			path = AliPay;
-			sourceTree = "<group>";
-		};
-		363A41CD1D2643D2004E66EF /* Apple */ = {
-			isa = PBXGroup;
-			children = (
-				363A41CE1D2643D2004E66EF /* libUPAPayPlugin.a */,
-				363A41CF1D2643D2004E66EF /* UPAPayPlugin.h */,
-				363A41D01D2643D2004E66EF /* UPAPayPluginDelegate.h */,
-			);
-			path = Apple;
 			sourceTree = "<group>";
 		};
 		363A41D11D2643D2004E66EF /* JSON */ = {
@@ -295,9 +261,8 @@
 		363A41DA1D2643D2004E66EF /* UnionPay */ = {
 			isa = PBXGroup;
 			children = (
-				363A41DB1D2643D2004E66EF /* libUPPayPlugin.a */,
-				363A41DC1D2643D2004E66EF /* UPPayPlugin.h */,
-				363A41DD1D2643D2004E66EF /* UPPayPluginDelegate.h */,
+				36E128B01E03D14D0082573A /* libPaymentControl.a */,
+				36E128B11E03D14D0082573A /* UPPaymentControl.h */,
 			);
 			path = UnionPay;
 			sourceTree = "<group>";
@@ -305,7 +270,6 @@
 		363A41DE1D2643D2004E66EF /* WXPay */ = {
 			isa = PBXGroup;
 			children = (
-				363A41DF1D2643D2004E66EF /* libWeChatSDK.a */,
 				363A41E01D2643D2004E66EF /* WXApi.h */,
 				363A41E11D2643D2004E66EF /* WXApiObject.h */,
 			);
@@ -443,9 +407,6 @@
 		36DCE2A41B8D600B004BB25E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				36F1916D1D23A0910054E9B8 /* libUPAPayPlugin.a */,
-				36DB45021C51D8DF00D1DDB2 /* AFNetworking.framework */,
-				36DCE2A51B8D602A004BB25E /* libUPPayPlugin.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -459,10 +420,8 @@
 			files = (
 				363A424A1D2643D2004E66EF /* BaiduViewController.h in Headers */,
 				363A425D1D2643D2004E66EF /* BCQueryResp.h in Headers */,
-				363A42301D2643D2004E66EF /* UPPayPluginDelegate.h in Headers */,
 				363A422D1D2643D2004E66EF /* SBJsonWriter.h in Headers */,
 				363A422B1D2643D2004E66EF /* SBJsonBase.h in Headers */,
-				363A422F1D2643D2004E66EF /* UPPayPlugin.h in Headers */,
 				363A42501D2643D2004E66EF /* BCPayObjects.h in Headers */,
 				363A421F1D2643D2004E66EF /* EUExBaseDefine.h in Headers */,
 				363A42391D2643D2004E66EF /* BCSecurityPolicy.h in Headers */,
@@ -481,12 +440,12 @@
 				363A425B1D2643D2004E66EF /* BCPayResp.h in Headers */,
 				363A42511D2643D2004E66EF /* BCBaseReq.h in Headers */,
 				363A423B1D2643D2004E66EF /* BCURLRequestSerialization.h in Headers */,
+				36E128B31E03D14D0082573A /* UPPaymentControl.h in Headers */,
 				363A424C1D2643D2004E66EF /* PaySandBoxViewController.h in Headers */,
 				363A422C1D2643D2004E66EF /* SBJsonParser.h in Headers */,
 				363A42321D2643D2004E66EF /* WXApi.h in Headers */,
 				363A424E1D2643D2004E66EF /* BCPay.h in Headers */,
 				363A42371D2643D2004E66EF /* BCNetworkReachabilityManager.h in Headers */,
-				363A42241D2643D2004E66EF /* UPAPayPlugin.h in Headers */,
 				363A42211D2643D2004E66EF /* AlipaySDK.h in Headers */,
 				363A423D1D2643D2004E66EF /* BCURLResponseSerialization.h in Headers */,
 				363A42571D2643D2004E66EF /* BCQueryReq.h in Headers */,
@@ -496,7 +455,6 @@
 				363A42431D2643D2004E66EF /* BCPayConstant.h in Headers */,
 				363A42261D2643D2004E66EF /* JSON.h in Headers */,
 				363A42361D2643D2004E66EF /* BCNetworking.h in Headers */,
-				363A42251D2643D2004E66EF /* UPAPayPluginDelegate.h in Headers */,
 				363A42281D2643D2004E66EF /* NSObject+SBJSON.h in Headers */,
 				363A42631D2643D2004E66EF /* BCQueryRefundResult.h in Headers */,
 				363A42411D2643D2004E66EF /* BCPayCache.h in Headers */,
@@ -719,17 +677,13 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External/BeeCloudSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/AFNetworking",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External/UnionPaySDK",
-					"$(PROJECT_DIR)/External/WeChatSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/UnionPay",
-					"$(PROJECT_DIR)/BCPaySDK/External/Apple",
 					"$(PROJECT_DIR)/BCPaySDK/External/WXPay",
 				);
 				OTHER_LDFLAGS = "-ObjC";
@@ -743,17 +697,13 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External/BeeCloudSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/AFNetworking",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/External/UnionPaySDK",
-					"$(PROJECT_DIR)/External/WeChatSDK",
 					"$(PROJECT_DIR)/BCPaySDK/External/UnionPay",
-					"$(PROJECT_DIR)/BCPaySDK/External/Apple",
 					"$(PROJECT_DIR)/BCPaySDK/External/WXPay",
 				);
 				OTHER_LDFLAGS = "-ObjC";

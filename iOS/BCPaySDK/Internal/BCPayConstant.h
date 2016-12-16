@@ -11,7 +11,7 @@
 #ifndef BCPaySDK_BCPayConstant_h
 #define BCPaySDK_BCPayConstant_h
 
-static NSString * const kApiVersion = @"3.0.1";//api版本号
+static NSString * const kApiVersion = @"3.1.0";//api版本号
 
 static NSString * const kNetWorkError = @"网络请求失败";
 static NSString * const kKeyResponseResultCode = @"result_code";
@@ -25,11 +25,7 @@ static NSString * const kKeyBCAppID = @"bcAppID";
 static NSString * const kKeyBCAppSecret = @"bcAppSecret";
 static NSString * const kKeyUrlScheme = @"urlScheme";
 
-static NSUInteger const kBCHostCount = 4;
-static NSString * const kBCHosts[] = {@"https://apisz.beecloud.cn",
-    @"https://apiqd.beecloud.cn",
-    @"https://apibj.beecloud.cn",
-    @"https://apihz.beecloud.cn"};
+static NSString * const kBCHost = @"https://api.beecloud.cn";
 
 static NSString * const reqApiVersion = @"/2/rest";
 
@@ -46,7 +42,6 @@ static NSString * const kRestApiSandboxNotify = @"%@%@/notify/";
 static NSString * const PayChannelWxApp = @"WX_APP";//微信APP
 static NSString * const PayChannelAliApp = @"ALI_APP";//支付宝APP
 static NSString * const PayChannelUnApp = @"UN_APP";//银联APP
-static NSString * const PayChannelApple = @"APPLE";//银联APP
 static NSString * const PayChannelBaiduApp = @"BD_APP";//
 static NSString * const PayChannelBaiduWap = @"BD_WAP";
 static NSString * const PayChannelBCApp = @"BC_APP";
@@ -66,7 +61,11 @@ typedef NS_ENUM(NSInteger, BCPayUrlType) {
     /**
      *  Alipay.
      */
-    BCPayUrlAlipay
+    BCPayUrlAlipay,
+    /**
+     * Union Pay
+     */
+    BCPayUrlUnionPay
 };
 
 enum  BCErrCode {

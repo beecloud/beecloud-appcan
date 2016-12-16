@@ -4,5 +4,7 @@
         <method name="initBeeCloud"></method>
         <method name="pay"></method>
         <method name="getApiVersion"></method>
+        <method name="isWxAppInstalled"></method>
+        <method name="isSandboxMode"></method>
 	</plugin>
 </uexplugins>

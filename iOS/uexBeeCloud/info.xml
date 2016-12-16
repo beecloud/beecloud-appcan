@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <uexplugins>
     <plugin
-        uexName="uexBeeCloud" version="3.0.1" build="1">
-        <info>1:更新AFNetworking.framework</info>
+        uexName="uexBeeCloud" version="3.1.0" build="2">
+        <info>更新支付宝SDK</info>
             <build>0:使用AFNetworking.framework(3.0)替代源文件引用;支持iOS 7.0</build>
+            <build>1:更新AFNetworking.framework</build>
+            <build>2:更新支付宝、银联SDK支持苹果ATS</build>
     </plugin>
 </uexplugins>
